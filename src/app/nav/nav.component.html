@@ -1,0 +1,17 @@
+<mat-toolbar class="navbar">
+    <a mat-button class="rah1" routerLink="home">Food Adda</a>
+    <div  *ngIf="!loggedIn">
+        <a mat-button class="rah" routerLink="login">Login</a>
+    </div>
+    <div class="navbar a" *ngIf="loggedIn">
+        <mat-icon>account_circle</mat-icon>
+        <a mat-button class="rah" routerLink="home">Welcome {{userName | titlecase}}</a>
+        
+            <select class="drop" [(ngModel)]="selectedRole" (change)="rolesPage()">
+              
+                <option class="drop" *ngFor="let r of rolesTypes" [value]="r">{{r | titlecase}}</option> 
+            </select>
+        <a mat-button class="rah" (click)="logout()">Logout</a>
+    
+    </div>
+</mat-toolbar>

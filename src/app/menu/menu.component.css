@@ -1,0 +1,169 @@
+
+
+  
+.updtButton{
+  color: white;
+  /* color: white; */
+ 
+  }
+  .button{
+    background-color: rgb(23, 179, 69);
+  color: white;
+  font-size: 10px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 80%;
+  height:50px;
+  width:300px;
+  border-radius: 8px;
+  border:rounded;
+  }
+  
+  
+
+.menuCard{
+  width: 380px;
+  height: 520px;
+}
+.crdHead
+{
+  height:70px;
+  width:380px;
+ 
+}
+.cnt{
+  height: 180px;
+  width: 370px;
+  }
+  .img1{
+    width: 350px;
+    height: 170px;
+    text-align: center;
+    border-radius: 10px;
+  border:rounded;
+    }
+  /* .footer1{
+    background-color:rgb(37, 35, 35);
+    height: 53px;
+    opacity: 0.85;
+    border-radius: 10px;
+  border:rounded;
+  } */
+
+.flower{
+  color:rgb(223, 27, 92);
+}
+.j{
+  color:rgb(32, 200, 230);
+}
+
+.pen{
+  color:rgba(252, 252, 50, 0.89);
+}
+
+.status{
+  color: rgb(110, 58, 23);
+}
+.veg{
+  color:green;
+}
+.nonveg{
+  color:red;
+}
+.txt{
+  color:white;
+}
+/* .icon{
+  color:white;
+  
+} */
+
+.materal-icons{
+  font-size: 100px;
+  color:white;
+}
+.loc{
+  color:rgb(201, 17, 17);
+}
+
+
+.menucard-header-image {
+  background-image: url('/assets/t1 (2).jpg');
+  background-size: cover;
+}
+
+  .check{
+    color:orange;
+    font-size: 20px;
+  }
+  .botn {
+    border: none;
+  /* color: white; */
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 80%;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border:rounded;
+  margin-bottom: 10px;
+
+  }
+  .mod{
+    opacity:0.9;
+    border:rounded;
+  }
+  .btnn{
+    height:40px;
+    width: 90px;
+    background-color:green;
+    /* color:black; */
+    font-size: 18px;
+    /* border-color: black; */
+    border-radius: 5px;
+    border:rounded;
+  }
+
+  .btnn1{
+    height:40px;
+    width: 90px;
+    background-color:red;
+    /* color:black; */
+    font-size: 18px;
+    /* border-color: black; */
+    border-radius: 5px;
+    border:rounded;
+  }
+
+
+  .ico{
+
+    font-size:50px;
+    /* margin-left: 200px; */
+    color:white;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border:rounded;
+  }
+  .dasd{
+ 
+    font-size:40px;
+  
+    color:white;
+   
+   }
+
+   .ic{
+    font-size:45px;
+    text-align: center;
+    color:red;
+   }
+
+   .ic1{
+    font-size:45px;
+    text-align: center;
+    /* padding-left: 20px; */
+    color:green;
+   }

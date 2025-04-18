@@ -1,0 +1,93 @@
+ .bx{
+  height: 40px; width: 80%;
+  border-radius: 8px;
+  border:rounded;
+  opacity: 100%;
+  
+ }
+
+.dropList{
+  margin-bottom: 2%; 
+  margin-top: 2%;
+  font-size: 20px;
+  font-weight: 500;
+  align-content: center;
+}
+
+ .drop{
+  background-color:white;
+  /* color:white; */
+  font-size: 20px;
+  font-weight: 500;
+  font-family:Roboto, "Helvetica Neue", sans-serif;
+  text-transform: capitalize;
+ }
+
+ .example-card {
+  max-width: 425px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  /* margin-left: 25%; */
+  opacity:0.95;
+}
+.mtitle{
+  font-size: x-large;
+}
+.das{
+  text-align: right;
+  float:right;
+}
+.reg{
+  color:red;
+}
+.reg1{
+  color:green;
+}
+.mag{
+  height:250px;
+  width:425px;
+}
+.mag:hover {
+  transform: scale(1.35);
+}
+
+.btn2{
+  padding-left: 10%;
+  height:50px;
+  width:150px;
+}
+.axn{
+ text-align: center;
+ color:green;
+}
+.axn1{
+text-align: center;
+color:red;
+}
+.checked{
+color:orange;
+font-size:20px;
+}
+.bax1{
+color:red;
+font-size:15;
+}
+.bax{
+color:green;
+font-size:17px;
+}
+
+.btn1:hover {
+opacity: 1;
+}
+
+.btn1 {
+background-color: rgb(37, 35, 35);
+color: white;
+font-size: 16px;
+/* padding: 16px; */
+border: none;
+width: 100%;
+opacity: 0.9;
+}
+

@@ -1,0 +1,85 @@
+<div class="container-fluid">
+  <div class="container-fluid">
+    <div class="row" *ngIf="errorMessage!=null" >
+        <div class="popup col-md-6 offset-3">
+            <div class="modal-dialog mod text-center">
+                <!-- Modal content-->
+                <div class="modal-content text-center">
+                    <div class="modal-header text-center">
+                        <mat-icon class="dasd text-center">sentiment_very_dissatisfied</mat-icon>
+                    </div>
+                    <div class="modal-body text-center">
+
+                        <div *ngIf="errorMessage">
+
+                            <h1 style="color:black;">{{errorMessage}}</h1><br>
+                            <button mat-button type="button" class="btnn  text-center"
+                                style="width:100%; color:antiquewhite;font-size: large;" (click)="adminHome()">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+     
+    <div class="row mt-4 col-container">
+      <div *ngFor="let r of restaurantList"  class="mr-auto ml-auto">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>{{r.restaurantName}}</mat-card-title>
+
+            <div *ngIf="r.restaurantType=='Nonveg'" class="das">
+              <mat-card-subtitle class="reg">{{r.restaurantType}}</mat-card-subtitle>
+            </div>
+            <div *ngIf="!(r.restaurantType=='Nonveg')" class="das">
+              <mat-card-subtitle class="reg1">{{r.restaurantType}}</mat-card-subtitle>
+            </div>
+          </mat-card-header>
+          <img mat-card-image class="mag" src={{r.photoUrls[0]}} alt="Restaurant photo">
+          <mat-card-content>
+            <p>
+              <mat-icon class="checked">star</mat-icon>{{r.avgRating}}
+            </p>
+            <p>
+              <mat-icon class="bax1"> place</mat-icon>
+              {{r.addressLine1}}, {{r.area}}, {{r.city}}, {{r.resState}} - {{r.pincode}}
+            </p>
+            <p>
+              <mat-icon class="bax"> call</mat-icon> {{r.restaurantContact}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <div class="row text-center"  >
+                <button class="btn btn-secondary accept"(click)="acceptRestaurant(r)" style="margin-left: 65px;" >Accept</button>
+                <button class="btn btn-secondary reject"(click)="rejectRestaurant(r)" style="margin-left: 70px;">Reject</button>
+                
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row" *ngIf="flag">
+        <div class="popup col-md-6 offset-3">
+            <div class="modal-dialog mod text-center">
+                <!-- Modal content-->
+                <div class="modal-content text-center">
+                    <div class="modal-header text-center" style="background-color: rgb(23, 179, 69);">
+                        <mat-icon class="dasd">sentiment_very_satisfied</mat-icon>
+                    </div>
+                    <div class="modal-body text-center">
+  
+                        <div *ngIf="successMessage">
+  
+                            <h1 style="color:black;">The Restaurant {{successMessage}} successfully</h1><br>
+                            <button mat-button type="button" class="btnn  text-center"
+                                style="width:100%; color:antiquewhite; font-size: large;" (click)="close()">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

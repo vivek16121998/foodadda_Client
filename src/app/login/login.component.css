@@ -1,0 +1,65 @@
+body, html {
+    height: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  .form{
+    
+    /* background-color: transparent !important; */
+    opacity:0.95;
+  }
+  
+  
+  /* Add styles to the form container */
+  .container {
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+    input[type=text]  {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #fff;
+  }
+  
+  input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit button */
+  .btn {
+    background-color: rgb(37, 35, 35);
+    color: white;
+    
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+  }
+  .input-group{
+    /* border-radius: 15px; */
+    background-color: rgb(37, 35, 35); 
+    height:40px;
+    margin-top: 20px;
+    max-width: auto;
+  }
+  .material-icons {
+    color:white;
+    padding-top: 1%;
+    font-size: 40px;
+  }

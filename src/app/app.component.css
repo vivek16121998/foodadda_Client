@@ -1,0 +1,74 @@
+
+.container{
+    height: 100%; 
+    width:100%;
+    overflow-x: hidden;
+    background-image: url("/assets/background.jpg"); height: 100vh;width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.example-container {
+    
+  width:100%;
+  height:90.4vh;
+    
+    overflow-x: hidden;
+    background-image: url("/assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* object-fit: scale-down; */
+    margin:0px;
+  }
+  .sidenav{
+    background: transparent;
+    width: 100px;
+  }
+.cvv{
+  height:100%;
+}
+  .content {
+    text-align: center !important;
+    padding: 10px;
+    
+  }
+  .content:hover {
+    background-color: rgba(230, 224, 224, 0.548);
+    cursor: pointer;
+  }
+  
+  .custom_menu_icon {
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    color: white;    
+    background-color: black;
+  }
+  .menu_p {
+    font-size: 14px;
+    color:white;
+    margin-bottom: 0px;
+    font-weight: bold;
+    opacity: 0.75;
+  }
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    color:white;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+  z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

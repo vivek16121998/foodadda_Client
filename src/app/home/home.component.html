@@ -1,0 +1,65 @@
+
+<header class="masthead" id="page-top">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase title-custom" >Food Adda</h1>
+            <h2 class="mx-auto mt-2 mb-5 sub-heading">Fresh Finger - Licking Food is just a click away!</h2>
+            <div class="form-inline d-flex">
+                <input type="text" class="form-control-lg flex-fill" [(ngModel)]="searchword" placeholder="Search Restaurants and Dishes" >&nbsp;
+                <button class="btn mx-auto bn1" [disabled]="!searchword" (click)="getSearchResults()">Search</button>
+
+             </div>
+            
+        </div>
+    </div>
+</header>
+
+
+<div style="text-align: center; margin-top:-140px !important" *ngIf="!search && clicked">
+    <h1 style="color:white;">
+        <span class="material-icons">
+            error_outline
+        </span>
+        Sorry, no results found!</h1>
+    <h2 style="color:white; opacity:0.8">Please check the spelling or try searching for something else</h2>
+</div>
+
+<div class="container-fluid res">
+    <div *ngIf="search">
+        <div class="row mt-4 col-container">
+            <div *ngFor="let r of searchRestaurants" class="mr-auto ml-auto">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>{{r.restaurantName}}</mat-card-title>
+                        <div *ngIf="r.restaurantType=='Nonveg'" class="das">
+                            <mat-card-subtitle class="reg">{{r.restaurantType}}</mat-card-subtitle>
+                        </div>
+                        <div *ngIf="!(r.restaurantType=='Nonveg')" class="das">
+                            <mat-card-subtitle class="reg1">{{r.restaurantType}}</mat-card-subtitle>
+                        </div>
+                    </mat-card-header>
+                    <img mat-card-image class="mag" src={{r.photoUrls[0]}} alt="Restaurant photo">
+                    <mat-card-content>
+                        <p>
+                            <mat-icon class="checked">star</mat-icon>{{r.avgRating}}
+                        </p>
+                        <p>
+                            <mat-icon class="bax1"> place</mat-icon>
+                            {{r.addressLine1}}, {{r.area}}, {{r.city}}, {{r.resState}} - {{r.pincode}}
+                        </p>
+                        <p>
+                            <mat-icon class="bax"> call</mat-icon> {{r.restaurantContact}}
+                        </p>
+                        <p>Cost for Two : {{r.transaction.restaurantApproxCost}}</p>
+                        <p class="axn" *ngIf="r.transaction.restaurantStatus">CURRENTLY OPEN</p>
+                        <p class="axn1" *ngIf="!r.transaction.restaurantStatus">CURRENTLY CLOSED</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button class="btn1" (click)="checkMenu(r.restaurantId)">CHECK MENU</button>
+                        <!-- <button mat-button class="btn2" (click)="bookTable(r.restaurantId)">BOOK A TABLE</button> -->
+                    </mat-card-actions>
+                </mat-card>
+                 </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div *ngFor="let r of acceptedRestaruantsList">
+      <div class="row">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>{{r.restaurantName}}</mat-card-title>
+            <div *ngIf="r.restaurantType=='Nonveg'" class="das">
+              <mat-card-subtitle class="reg">{{r.restaurantType}}</mat-card-subtitle>
+            </div>
+            <div *ngIf="!(r.restaurantType=='Nonveg')" class="das">
+              <mat-card-subtitle class="reg1">{{r.restaurantType}}</mat-card-subtitle>
+            </div>
+          </mat-card-header>
+          <img mat-card-image class="mag" src={{r.photoUrls[0]}} alt="Restaurant photo">
+          <mat-card-content>
+            <p>
+              <mat-icon class="checked">star</mat-icon>{{r.avgRating}}
+            </p>
+            <p>
+              <mat-icon class="bax1"> place</mat-icon>
+              {{r.addressLine1}}, {{r.area}}, {{r.city}}, {{r.resState}} - {{r.pincode}}
+            </p>
+            <p>
+              <mat-icon class="bax"> call</mat-icon> {{r.restaurantContact}}
+            </p>
+            <p *ngIf="r.transaction">
+                Cost For two : {{r.transaction.restaurantApproxCost}}
+            </p>
+            <p *ngIf="!r.transaction">
+                Cost For two : Not yet calculated.
+            </p>
+            <div *ngIf="r.transaction"> 
+                <p class="axn" *ngIf="r.transaction.restaurantStatus">CURRENTLY OPEN</p>
+                <p class="axn1" *ngIf="!r.transaction.restaurantStatus">CURRENTLY CLOSED</p>
+            </div>
+            <p class="axn" *ngIf="!r.transaction">
+                Restaurant yet to start Online
+            </p>
+
+          </mat-card-content>
+          <mat-card-actions>
+              <button (click)=" removeRestaurant(r)">Remove Restaurant</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>

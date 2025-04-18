@@ -1,0 +1,146 @@
+.container{
+  width:100%;
+}
+.row{
+  padding-top : 3%;
+}
+
+.card{
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+     /* padding-top: 2%; */
+      opacity: 0.95;
+       /* border-radius: 15px; */
+       width: 500px;
+       padding-bottom: 0px;
+  }
+  
+  .btn1{
+    padding:5px;
+    background-color: rgb(37, 35, 35);
+    color: white;
+    /* padding: 16px 20px; */
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  .btn1:hover {
+    opacity: 1;
+  }
+
+  .btn2{
+    padding:5px;
+    background-color: rgb(37, 35, 35);
+    color: white;
+
+    border:none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  .btn2:hover
+  {
+    opacity: 1;
+  } 
+  
+  
+  .input-group{
+    /* border-radius: 15px; */
+    color:white;
+    background-color: rgb(59, 55, 55); 
+    height:40px;
+    margin-top: 20px;
+    max-width: auto;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  
+  .material-icons{
+    font-size: 40px;
+  }
+  #temp{
+    padding-top: 1%;
+    font-size: 14px;
+  }
+  
+  .is-invalid {
+    border-left: solid 6px red;
+  }
+  .set{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    font-weight: 300;
+  }
+  
+  /* Set a style for the submit button */
+  .btn {
+    background-color: rgb(37, 35, 35);
+    color: white;
+    /* padding: 16px 20px; */
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  .btn:hover {
+    opacity: 1;
+  }
+
+.col{
+  margin-left: 38px;
+  width:auto;
+}
+.text-danger{
+  padding: 0px;
+}
+.text-success{
+  padding: 0px;
+}
+
+.alert{
+  padding :5px;
+  margin: 10px;
+  margin-top:10px;
+}
+
+.modal-header{
+  padding: 0;
+  padding-bottom: 10px;
+  background-color:rgb(236, 55, 55)
+}
+/* css for  dialog box */
+.btnn{
+  height:40px;
+  width: 200px;
+  background-color: rgb(37, 35, 35);
+  color:white;
+  font-size: 18px;
+  border-radius: 8px;
+  border:rounded;
+}
+.dasd{
+  margin:10px;
+  font-size:50px;
+  margin-left: 225px;
+  color:white;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border:rounded;
+
+}
+.popup{
+  border-radius: 7px;
+  margin:30px auto 0;
+  padding:6px;  
+  position:absolute;
+  width:800px;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -200px; 
+}

@@ -1,0 +1,80 @@
+
+  <div *ngIf="!showTable" class="checked text-center " style="margin-top: 80px;">
+        <div style="color: white; font-size: 30px;">Please add some items first!</div>
+       
+        <br><br>
+        <button class="btn btn-primary text-center " style="max-width: fit-content;" (click)="goHome()">Add items</button>
+  </div>
+  <div *ngIf="showTable">
+    <br><br>
+    <table class="checked table tableCart" style="margin-left:auto; margin-right:auto;">
+      <thead class="tableCart">
+        <th>Dish Name</th>
+        <th>Dish Price</th>
+        <th>Dish Quantity</th>
+        <th>Delete Dish</th>
+      </thead>
+      <tbody class="ot">
+        <tr *ngFor="let orderDish of orderList">
+          <td>{{orderDish.dish.dishName}}</td>
+          <td>&#8377; {{orderDish.dish.price}}</td>
+          <td style="padding-left: 40px;">
+            {{orderDish.qty}}&nbsp;
+            <span class="material-icons"style="color:white;" (click)="add(orderDish,orderDish.qty)">
+              add_box
+              </span>
+            <span class="material-icons" style="color:white;" (click)="subtract(orderDish,orderDish.qty)">
+              indeterminate_check_box
+              </span>
+          </td>
+          <td style="padding-left: 45px;"><i matTooltip="Remove"
+            class="material-icons" (click)="removeItem(orderDish)">delete</i>
+            
+          </td>
+         
+        </tr>
+
+      </tbody>
+
+    </table>
+    <table class="checked table tableCart1" style="margin-left:auto; margin-right:auto;">
+
+      <tr>
+        <td></td>
+        <td style="text-align: center;padding-left:60px;"><p class ="checked2">Total Bill : &#8377; {{bill}}</p></td>
+        
+        
+      </tr>
+      <tr>
+        <td style="padding-right: 280px;font-size: large;"><button class="btn btn-primary text-center" matTooltip="Click to add items" (click)="goBack()">Add items</button></td>
+        <td style="font-size: large; padding-left: 190px;"> <button class="btn btn-primary text-center"  matTooltip="Click to place order" (click)="placeTheOrder()">Place Order</button></td>
+      </tr>
+
+    </table>
+   
+    
+  </div>
+<div class="container-fluid">
+  <div class="row" *ngIf="flag">
+      <div class="popup col-md-6 offset-3">
+          <div class="modal-dialog mod text-center">
+              <!-- Modal content-->
+              <div class="modal-content text-center">
+                  <div class="modal-header text-center" style="background-color: rgb(23, 179, 69);">
+                      <mat-icon class="dasd">sentiment_very_satisfied</mat-icon>
+                  </div>
+                  <div class="modal-body text-center">
+
+                      <div *ngIf="successMessage">
+
+                          <h1 style="color:black;">{{successMessage}}</h1><br>
+                          <button mat-button type="button" class="btnn  text-center"
+                              style="width:100%; color:antiquewhite; font-size: large;" (click)="close()">OK</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+    

@@ -1,0 +1,27 @@
+
+  .mod{
+    opacity:0.9;
+    border:rounded;
+    border-radius: 20px;
+  
+  }
+  .btnn{
+    height:40px;
+    width: 200px;
+    background-color: rgb(37, 35, 35);
+    color:white;
+    font-size: 18px;
+    /* border-color: black; */
+    border-radius: 8px;
+    border:rounded;
+  }
+  .dasd{
+    margin:10px;
+    font-size:50px;
+    margin-left: 200px;
+    color:white;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border:rounded;
+  
+  }

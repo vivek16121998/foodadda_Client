@@ -1,0 +1,108 @@
+
+.j{
+  color:rgb(32, 200, 230);
+}
+
+.pen{
+  color:rgba(77, 77, 6, 0.89);
+}
+
+.status{
+  color: rgb(35, 49, 245);
+}
+.veg{
+  color:green;
+}
+.nonveg{
+  color:red;
+}
+.er{
+  color:brown;
+}
+
+.ab{
+  color:orangered;
+}
+.txt{
+  color:white;
+}
+
+
+
+.check{
+  color:orange;
+  font-size: 20px;
+}
+
+.loc{
+  color:rgb(201, 17, 17);
+}
+
+.menucard-header-image {
+  background-image: url('/assets/default_1.jpg');
+  background-size: cover;
+}
+
+    .botn:hover {
+      opacity: 1;
+    }
+    
+    .botn {
+      background-color: rgb(37, 35, 35);
+      color: white;
+      font-size: 16px;
+      padding: 10px;
+      border: 1%;
+      font-family: Verdana, Geneva, sans-serif;
+      /* cursor: pointer; */
+      width: 100%;
+    height: 50px;
+      opacity: 0.9;
+     margin-bottom: 10px;
+     
+    }
+
+.footer1{
+  
+  background-color:rgb(37, 35, 35);
+  height: 50px;
+}
+.menuCard{
+  width: 400px;
+  height: 500px;
+ 
+}
+.crdHead
+{
+  height:50px;
+  width:300px;
+ 
+}
+.cnt{
+  height: 150px;
+  width: 400px;
+  }
+  .img{
+    width: 360px;
+    height: 195px;
+    
+    }
+    .mod{
+      opacity:0.9;
+      border:rounded;
+    }
+    .btnn{
+      height:40px;
+      background-color:white;
+      color:black;
+      font-size: 18px;
+      border-color: black;
+      border-radius: 5px;
+      border:rounded;
+    }
+    .dasd{
+      margin:10px;
+      font-size:50px;
+      margin-left: 200px;
+      color:white;
+    }

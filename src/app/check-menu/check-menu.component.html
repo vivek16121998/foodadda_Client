@@ -1,0 +1,68 @@
+<!-- <div class="container col-md-8 offset-4">
+    <div class="row">
+       
+        <div *ngFor="let d of restaurant.dishes">
+            <div class="card mb-3" style="max-width: 600px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{d.imageUrl}}" class="card-img" alt="Dish Photo" height="200">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <div *ngIf="d.dishType=='Nonveg'">
+                                <h4 class="a">{{d.dishType}}</h4>
+                              </div>
+                              <div *ngIf="!(d.dishType=='Nonveg')">
+                                <h4 class="a1">{{d.dishType}}</h4>
+                              </div>
+                            <h3 class="card-title">{{d.dishName}}</h3>
+                            <p>
+                                <mat-icon class="checked">star</mat-icon>{{d.avgRating}}
+                            </p>
+                            <p class="card-text cuisine">{{d.dishCuisine}}</p>
+                            <p class="card-text">{{d.dishDescription}}</p>
+                            <p class="card-text price">&#8377;{{d.price}}</p>
+                            <button class="btn btn-primary crt" (click)="addToCart(d, 1)">Add To Cart</button>
+                            <p class="card-text chef"><small>{{d.speciality}}</small></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    <div class="row">
+        <div *ngFor="let d of orderList2">
+            <div class="card mb-3 offset-1" style="max-width:500px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{d.dish.imageUrl}}" class="card-img" alt="Dish Photo" height="225">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <div *ngIf="d.dish.dishType=='Nonveg'">
+                                <h4 matTooltip="Dish type" class="a">{{d.dish.dishType}}</h4>
+                              </div>
+                              <div *ngIf="!(d.dish.dishType=='Nonveg')">
+                                <h4 matTooltip="Dish type" class="a1">{{d.dish.dishType}}</h4>
+                              </div>
+                            <h3 class="card-title">{{d.dish.dishName}}</h3>
+                            <p>
+                                <mat-icon matTooltip="Average rating" class="checked">star</mat-icon>{{d.dish.avgRating}}
+                            </p>
+                            <p matTooltip="Dish Cuisine" class="card-text cuisine">{{d.dish.dishCuisine}}</p>
+                            <p matTooltip="Dish Description" class="card-text">{{d.dish.dishDescription}}</p>
+                            <p matTooltip="Price" class="card-text price">&#8377;{{d.dish.price}}</p>
+                     
+                            <button matTooltip="Click to add item to cart" class="btn btn-primary crt" [disabled]="!restaurant.transaction.restaurantStatus" (click)="addToCart(d.dish, 1)"> Add To Cart <span class="badge badge-light" *ngIf="d.qty!=0">{{d.qty}}</span> </button>
+                            <p matTooltip="Dish specialty" class="card-text chef"><small>{{d.dish.speciality}}</small></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,130 @@
+.example-card {
+  max-width: 425px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  /* margin-left: 25%; */
+  opacity:0.95;
+}
+.mtitle{
+  font-size: x-large;
+}
+.das{
+  text-align: right;
+  float:right;
+}
+.reg{
+  color:red;
+}
+.reg1{
+  color:green;
+}
+.mag{
+  height:250px;
+  width:425px;
+}
+.mag:hover {
+  transform: scale(1.35);
+}
+
+.btn2{
+  padding-left: 10%;
+  height:50px;
+  width:150px;
+}
+.axn{
+ text-align: center;
+ color:green;
+}
+.axn1{
+text-align: center;
+color:red;
+}
+.checked{
+color:orange;
+font-size:20px;
+}
+.bax1{
+color:red;
+font-size:15;
+}
+.bax{
+color:green;
+font-size:17px;
+}
+.accept{
+  background-color: green;
+  font-size:  16px;
+  padding: 15px;
+}
+.reject{
+  background-color: red;
+  font-size: 16px;
+  padding: 15px;
+}
+.btn1:hover {
+opacity: 1;
+}
+
+.btn1 {
+background-color: rgb(37, 35, 35);
+color: white;
+font-size: 16px;
+/* padding: 16px; */
+border: none;
+width: 100%;
+opacity: 0.9;
+}
+.dasd{
+  margin:10px;
+  font-size:50px;
+  margin-left: 225px;
+  color:white;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border:rounded;
+
+}
+.popup{
+  border-radius: 7px;
+  margin:30px auto 0;
+  padding:6px;  
+  position:absolute;
+  width:800px;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -200px; 
+}
+.col{
+  margin-left: 38px;
+  width:auto;
+}
+.text-danger{
+  padding: 0px;
+}
+.text-success{
+  padding: 0px;
+}
+
+.alert{
+  padding :5px;
+  margin: 10px;
+  margin-top:10px;
+}
+
+.modal-header{
+  padding: 0;
+  padding-bottom: 10px;
+  background-color:rgb(236, 55, 55)
+}
+
+.btnn{
+  height:40px;
+  width: 200px;
+  background-color: rgb(37, 35, 35);
+  color:white;
+  font-size: 18px;
+  /* border-color: black; */
+  border-radius: 8px;
+  border:rounded;
+}

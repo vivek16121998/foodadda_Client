@@ -1,0 +1,107 @@
+.container{
+    justify-content: center;
+    display:block;
+    margin: auto;
+}
+.checked{
+    color:orange;
+    font-size:20px;
+    margin:0px;
+  }
+  .ab{
+      font-size: 18px;
+  }
+  .a{
+      float:right;
+      color:red;
+  }
+  .a1{
+    float:right;
+    /* color:green; */
+}
+.img{
+    width:170px;
+    height:295px;
+}
+.cnt{
+    width:330px;
+}
+.card-title{
+    color: rgb(37, 35, 35);
+      margin:0px;
+      font-size: 15px;
+      font-weight: bolder;
+}
+.pin{
+    color: rgb(37, 35, 35);
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+}
+.card-text{
+    margin:0px;
+}
+.cuisine{
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.price{
+    font-weight: bold;
+}
+
+.crt{
+    size:small;
+    padding-right: 20px;
+    float:right;
+    padding:10px;
+}
+
+.crt1{
+    padding-left: 30px;
+    size:small;
+    float:left;
+    padding:10px;
+}
+
+.card{
+    margin-top:10px;
+    margin-left:30px;
+    margin-right:30px;
+}
+
+.seecart{
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: mediumslateblue;
+}
+
+.cartDish{
+    font-size: medium;
+    color: yellowgreen;
+}
+
+.orderTable{
+    align-content: center;
+}
+
+.button{
+    background-color: rgb(23, 179, 69);
+  color: white;
+  height:50px;
+  width:300px;
+  }
+  .ic{
+    font-size:35px;
+    text-align: center;
+    color:red;
+   }
+
+   .ic1{
+    font-size:35px;
+    text-align: center;
+    /* padding-left: 20px; */
+    color:green;
+   }
+   .footer1{
+    margin-left: 76px;
+   }

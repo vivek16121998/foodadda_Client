@@ -1,0 +1,65 @@
+.container{
+    justify-content: center;
+    display:block;
+    margin: auto;
+}
+.checked{
+    color:orange;
+    font-size:20px;
+    margin:0px;
+  }
+  .a{
+      float:right;
+      color:red;
+  }
+  .a1{
+    float:right;
+    color:green;
+}
+.card-title{
+      margin:0px;
+      font-weight: bolder;
+}
+.chef{
+    color:green;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+}
+.card-text{
+    margin:0px;
+}
+.cuisine{
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.price{
+    font-weight: bold;
+}
+
+.crt{
+    size:small;
+    float:right;
+    padding:10px;
+}
+
+.card{
+    margin-top:10px;
+    margin-left:30px;
+    margin-right:30px;
+}
+
+.seecart{
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: mediumslateblue;
+}
+
+.cartDish{
+    font-size: medium;
+    color: yellowgreen;
+}
+
+.orderTable{
+    align-content: center;
+}

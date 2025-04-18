@@ -1,0 +1,169 @@
+/* .heading{
+    margin-top:50px;
+    font-size: xxx-large;
+    font-weight: bold;
+    color:white;
+    opacity:0.9;
+} */
+.bn1:hover {
+  opacity: 1;
+}
+.material-icons{
+  font-size: 23px;
+}
+.bn1 {
+  background-color: rgb(37, 35, 35);
+  color: white;
+  font-size: 14px;
+  margin-left: 10px;
+  /* padding: 16px; */
+  border: rounded;
+  /* width: 100%; */
+  opacity: 0.85;
+}
+.masthead {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 25rem;
+  padding: 15rem 0;
+  padding-bottom:0px;
+  background: transparent;
+  /* background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)),url("/assets/bg-masthead1.jpg");
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("/assets/bg-masthead1.jpg"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.masthead h1 {
+  font-size: 2.5rem;
+  line-height: 4rem;
+  letter-spacing: 1rem;
+  background: rgba(255, 191, 54, 0.9);
+  /* background: -webkit-linear-gradient(rgba(248, 171, 4, 0.9), rgba(248, 171, 4, 0)); */
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.masthead h2 {
+  color: rgba(255, 174, 0, 0.9);;
+  font-size: medium;
+  letter-spacing: 2px;
+}
+
+@media (min-width: 768px) {
+  .masthead h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead {
+    height: 100vh;
+    padding: 0;
+  }
+  .masthead h1 {
+    font-size: 10.5rem;
+    line-height: 10.5rem;
+    letter-spacing: 0.8rem;
+  }
+  .masthead h2 {
+    font-size: medium;
+  }
+}
+.res{
+  /* margin-top:0px ; */
+  margin-top:-150px !important;
+  padding-top: 0px;
+}
+.trends-heading{
+    margin-top:20px;
+    margin-bottom:100px;
+    color:white;
+    font-size: x-large;
+    font-weight: italic;
+    opacity:0.8;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+.sea{
+    max-width:600px;
+    height:40px; 
+}
+.bv{
+    size:x-large;
+    padding:10px;
+}
+  .example-card {
+    width: 425px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    /* margin-left: 25%; */
+    opacity:0.95;
+  }
+  .das{
+    text-align: right;
+    float:right;
+  }
+  .reg{
+    color:red;
+  }
+  .reg1{
+    color:green;
+  }
+  .mag{
+    height:250px;
+    width:425px;
+  }
+  .mag:hover {
+    transform: scale(1.35);
+  }
+  .btn1 {
+    background-color: rgb(37, 35, 35);
+    color: white;
+    font-size: 16px;
+    /* padding: 16px; */
+    border: none;
+    width: 100%;
+    opacity: 0.9;
+  }
+  .btn2{
+    padding-left: 10%;
+    height:50px;
+    width:150px;
+  }
+ .axn{
+   text-align: center;
+   color:green;
+ }
+ .axn1{
+  text-align: center;
+  color:red;
+}
+.checked{
+  color:orange;
+  font-size:20px;
+}
+.bax1{
+  color:red;
+  font-size:15;
+}
+.bax{
+  color:green;
+  font-size:17px;
+}
+.trend{
+    color:white;
+}
+.btn1:hover {
+  opacity: 1;
+  /* background-color: rgba(16, 16, 17, 0.603);
+  color: white; */
+}
+.sub-heading
+{font-size: medium;
+letter-spacing:2px;
+color: coral;}
+.title-custom{}

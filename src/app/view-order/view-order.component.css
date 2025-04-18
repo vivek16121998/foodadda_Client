@@ -1,0 +1,110 @@
+
+  .container{
+    justify-content: center;
+    display:block;
+    margin: auto;
+}
+.checked{
+    color:orange;
+    font-size:20px;
+    margin:0px;
+  }
+
+  .ot{
+    justify-content: center;
+}
+
+.btnn{
+  height:40px;
+  width: 200px;
+  background-color: rgb(37, 35, 35);
+  color:white;
+  font-size: 18px;
+  /* border-color: black; */
+  border-radius: 8px;
+  border:rounded;
+}
+
+.dasd{
+  /* margin:10px; */
+  font-size:50px;
+  margin-left: 225px;
+  color:white;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border:rounded;
+
+}
+
+.modal-header{
+  padding: 0;
+  padding-bottom: 10px;
+  background-color:rgb(236, 55, 55)
+}
+
+.popup{
+  border-radius: 7px;
+  /* background:#6b6a63; */
+  margin:30px auto 0;
+  padding:6px;  
+  /* // here it comes */
+  position:absolute;
+  width:800px;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -200px; 
+}
+/* .modal-content{
+  /* padding:20px; */
+  /* size: 100px; */
+/* }  */
+/* table {
+    width: 100%;
+    background: transparent;
+    text-align: center;
+    padding-top: 0%;
+    
+  } */
+  /* .mat-header-cell{
+   
+     padding-top: 0%;
+    background: transparent;
+    color: orange; 
+    text-align: center;
+    font-size: x-large;
+  }
+  .mat-cell{
+    
+    padding:0.4cm;
+    background: transparent;
+    color:orange; 
+    text-align: center;
+    font-size: large;
+  }
+  
+ 
+  ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+      background-color: transparent;
+  }
+   
+  ::ng-deep .mat-select-value {
+    color:rgba(12, 12, 11, 0.664); 
+    
+    text-align: center;
+    font-weight: bold;
+      font-size: 20px;
+  }
+  ::ng-deep .mat-select-arrow {
+      color: rgb(87, 84, 221);
+  }
+  ::ng-deep .mat-option{
+    padding: 0!important;
+  
+  }
+  ::ng-deep .mat-option-text {
+    background-color:rgb(195, 198, 236);
+      text-align: center;
+  } */
+
+  
