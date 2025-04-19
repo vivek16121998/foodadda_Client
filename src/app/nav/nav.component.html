@@ -12,6 +12,7 @@
                 <option class="drop" *ngFor="let r of rolesTypes" [value]="r">{{r | titlecase}}</option> 
             </select>
         <a mat-button class="rah" >&#8377; {{availableAmount}}</a>
+        
         <a mat-button class="rah" (click)="logout()">Logout</a>
     
     </div>
