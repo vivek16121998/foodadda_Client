@@ -17,4 +17,4 @@ phases:
   post_build:
     commands:
       - echo "Deploying to S3 bucket..."
-      - aws s3 sync dist/foodadda_Client/ s3://foodadda-client --delete
+      - aws s3 sync dist/my-app/ s3://foodadda-client --delete
