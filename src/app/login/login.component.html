@@ -1,3 +1,43 @@
 
 
                 <!-- You code goes here -->
+<div style="margin-top: 50px;">
+    <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3" >
+        <div class="card auth">
+            <div class="card-body auth-card">
+                <div class="auth-avatar">
+                    <img src="https://pluspng.com/img-png/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png" alt="user" class="user-image">
+                </div>
+                <form class="ml-3 mr-3 mb-3" [formGroup]="loginForm" (ngSubmit)="login()" style="text-align: left;">
+                         <div class="form-group margin" >
+                             <label for="contactNumber"  class="textarea margin">Contact Number</label>
+                             <input class="form-control" type="number" id="contactNumber" formControlName="contactNumber">
+                             <span class="text-danger textarea" *ngIf="loginForm.controls['contactNumber'].invalid && loginForm.controls['contactNumber'].dirty ">
+                               Enter 10 digit of your mobile number
+                             </span>
+                         </div>
+                         <div class="form-group margin">
+                             <label for="password" class="textarea margin">Password</label>
+                             <input class="form-control" type="password" id="password" formControlName="password" >
+                             <span class="text-danger textarea" *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].dirty ">
+                               Enter a valid Pattern of password
+                             </span>
+                         </div >
+                         <div class="text-center pt-1 mb-1 pb-1">
+                         
+                           <button type="submit" class="btn btn-block fa-lg gradient-custom-2 mb-3"[ngClass]=" loginForm.invalid ? 'btn-primary' : 'btn-success'" [disabled]="loginForm.invalid" >Login</button>
+                         
+                         </div>
+                        
+                        </form>
+                        <span *ngIf="errorMessage" class="text-danger " >
+                                 {{errorMessage}}
+                        </span>
+                        <div class="text-center sign-up">
+                            Don`t have an account ? <a href="register/">Sign Up</a> hera.
+                          </div>       
+            </div>
+        </div>
+    </div>
+</div>
+    

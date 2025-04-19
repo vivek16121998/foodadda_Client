@@ -1,8 +1,9 @@
 
-<div *ngIf="trendsPresent">
+<div *ngIf="trendsPresent" >
   <h1 class="trend text-center">Check out some of our Trending Restaurants!!</h1>
   <div class="container-fluid">
     <div class="row mt-4 col-container">
+      <div class="grid-container">
       <div *ngFor="let r of trendingRestaurants" class="mr-auto ml-auto">
         <mat-card class="example-card">
           <mat-card-header>
@@ -36,6 +37,7 @@
           </mat-card-actions>
         </mat-card>
       </div>
+    </div>
     </div>
   </div>
 </div>

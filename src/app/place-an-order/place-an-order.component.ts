@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { PlaceAnOrderService } from './place-an-order.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthService } from '../core/auth.service';
 // import { Data } from '../place-an-order/data';
 
 @Component({
@@ -16,7 +17,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PlaceAnOrderComponent implements OnInit {
 
-  userName=sessionStorage.getItem('userName');;
+  userName!:String
   order:Orders = JSON.parse(sessionStorage.getItem("data") || '{}');
   orderList!:OrderItems[];
   bill!:number;
@@ -24,18 +25,23 @@ export class PlaceAnOrderComponent implements OnInit {
   successMessage!:String;
   errorMessage!:String;
   showTable:Boolean=false;
-  userId  = sessionStorage.getItem("userId")
+  userId!:String
   restId = Number.parseInt(sessionStorage.getItem("restId") || '{}')
   flag!:boolean
+  errorflag!:boolean
 delMsg:string="Deleted successfully"
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
   displayedColumns:string[] = ['name', 'quantity', 'price', 'remove'];
-  constructor(private router:Router, private orderService:PlaceAnOrderService,private _snackBar: MatSnackBar) { 
+  constructor(private router:Router, private orderService:PlaceAnOrderService,private _snackBar: MatSnackBar,private auth:AuthService) { 
     // this.order = this.data.storage;
     // e, private data:Data
   }
 
   ngOnInit( ): void {
+    this.auth.sessionUser.subscribe(data => {
+      this.userName = data.userName;
+      this.userId=data.userId.toString();
+    });
     console.log(this.order);
     this.orderList=this.order.orderItemsList;
     if(this.orderList.length>0){
@@ -99,8 +105,11 @@ subtract(orderDish:OrderItems,qty:number){
 
       response=>{
         if(response){
-          this.successMessage = "Order placed successfully! OrderId: "+response;
+          console.log(response)
+          this.successMessage = "Order placed successfully! OrderId: "+response.orderId;
           console.log(this.successMessage)
+
+          this.auth.setavailableAmount(response.availableAmount)
           sessionStorage.removeItem("data")
           sessionStorage.removeItem("restId")
           this.flag=true
@@ -112,6 +121,7 @@ subtract(orderDish:OrderItems,qty:number){
         }
       },
       error => {
+        this.errorflag=true
         this.errorMessage =error.error.message;
         
       }
@@ -126,6 +136,10 @@ subtract(orderDish:OrderItems,qty:number){
   }
   close(){
     this.router.navigate(['home/allRestaurants'])
+  }
+  closeerror(){
+    this.errorflag=false
+    this.errorMessage=""
   }
 
 

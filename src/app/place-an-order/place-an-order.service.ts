@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Orders } from '../models/Orders';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { placeOrder } from '../models/PlaceOrder';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,6 @@ export class PlaceAnOrderService {
     
     console.log(userID)
     console.log(order.orderItemsList)
-    return <Observable<Boolean>>this.http.put(environment.placeOrder+userID, order);
+    return <Observable<placeOrder>>this.http.put(environment.placeOrder+userID, order);
   }
 }

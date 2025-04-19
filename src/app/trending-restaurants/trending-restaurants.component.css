@@ -70,3 +70,11 @@
   opacity: 0.9;
  
 }
+.grid-container{
+  margin: 50px;
+  display: grid;
+  grid-template-columns:  auto auto;
+   @media (max-width:1000px) {
+     grid-template-columns: auto;
+   }
+}

@@ -1,21 +1,24 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+const server="foodaddaserver-env.eba-mbyeegm9.ap-south-1.elasticbeanstalk.com"
+const portnumber="80"
+const applicationName="cibo"
 
 export const environment = {
-  getRestaurants : "http://localhost:4000/cibo/searchAPI/viewAllRestaurants",
-  registerUser:"http://localhost:4000/cibo/UserAPI/userRegister/",
-  getOperatingRestaurants: "http://localhost:4000/cibo/AdminAPI/allRestaurants",
-  deleteRestaurant:"http://localhost:4000/cibo/AdminAPI/deleteRestaurant/",
-  newRestaurants:"http://localhost:4000/cibo/AdminAPI/newlyAddedRestaurants",
-  approveRestaurant:"http://localhost:4000/cibo/AdminAPI/grantPermission/",
-  getRatingsBasedRestaurant:"http://localhost:4000/cibo/AdminAPI/ratingsBasedRestaurant/",
-  loginUri : "http://localhost:4000/cibo/UserAPI/userLogin",
-  getOrders:"http://localhost:4000/cibo/orderAPI/viewAllOrders/",
-  bookTable:"http://localhost:4000/cibo/booktableAPI/book/",
-  getRestaurantName:"http://localhost:4000/cibo/orderAPI/getRestaurantName/",
-  placeOrder:"http://localhost:4000/cibo/orderAPI/newOrder/",
-  getAreaRecommendations:"http://localhost:4000/cibo/recommendationAPI/restaurantsByArea",
+  getRestaurants : "http://"+server+":"+portnumber+"/"+applicationName+"/searchAPI/viewAllRestaurants",
+  registerUser:"http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/userRegister/",
+  getOperatingRestaurants: "http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/allRestaurants",
+  deleteRestaurant:"http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/deleteRestaurant/",
+  newRestaurants:"http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/newlyAddedRestaurants",
+  approveRestaurant:"http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/grantPermission/",
+  getRatingsBasedRestaurant:"http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/ratingsBasedRestaurant/",
+  loginUri : "http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/userLogin",
+  getOrders:"http://"+server+":"+portnumber+"/"+applicationName+"/orderAPI/viewAllOrders/",
+  bookTable:"http://"+server+":"+portnumber+"/"+applicationName+"/booktableAPI/book/",
+  getRestaurantName:"http://"+server+":"+portnumber+"/"+applicationName+"/orderAPI/getRestaurantName/",
+  placeOrder:"http://"+server+":"+portnumber+"/"+applicationName+"/orderAPI/newOrder/",
+  getAreaRecommendations:"http://"+server+":"+portnumber+"/"+applicationName+"/recommendationAPI/restaurantsByArea",
 
   production: false
   

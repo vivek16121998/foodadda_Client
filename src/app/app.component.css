@@ -12,7 +12,7 @@
 .example-container {
     
   width:100%;
-  height:90.4vh;
+  height:85%;
     
     overflow-x: hidden;
     background-image: url("/assets/background.jpg");
@@ -27,6 +27,7 @@
   }
 .cvv{
   height:100%;
+  
 }
   .content {
     text-align: center !important;

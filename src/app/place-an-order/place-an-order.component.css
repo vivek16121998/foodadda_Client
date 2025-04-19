@@ -232,12 +232,12 @@
 }
 .popup{
   border-radius: 7px;
-  /* background:#6b6a63; */
+  background:white;
   margin:30px auto 0;
   padding:6px;  
   /* // here it comes */
   position:absolute;
-  width:800px;
+  width:500px;
   top: 50%;
   left: 50%;
   margin-left: -300px;

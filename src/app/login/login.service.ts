@@ -10,10 +10,10 @@ import { AuthService } from '../core/auth.service'
 })
 export class LoginService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   login(data: any): Observable<Users> {
-    return of();    
+    return this.http.post<Users>(environment.loginUri,data)
   }
 
 }

@@ -77,4 +77,27 @@
       </div>
   </div>
 </div>
+<div class="container-fluid">
+  <div class="row" *ngIf="errorflag">
+      <div class="popup col-md-6 offset-3">
+          <div class="modal-dialog mod text-center">
+              <!-- Modal content-->
+              <div class="modal-content text-center">
+                  <div class="modal-header text-center" style="background-color: red;">
+                      <mat-icon class="dasd">sentiment_very_satisfied</mat-icon>
+                  </div>
+                  <div class="modal-body text-center">
+
+                      <div *ngIf="errorMessage">
+
+                          <h1 style="color:black;">{{errorMessage}}</h1><br>
+                          <button mat-button type="button" class="btnn  text-center"
+                              style="width:100%; color:antiquewhite; font-size: large;" (click)="closeerror()">OK</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
     

@@ -1,65 +1,54 @@
-body, html {
-    height: 100%;
-  }
+
   
-  * {
-    box-sizing: border-box;
-  }
-  .form{
+  .auth-card{
+    background: #c31432;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 5px;
     
-    /* background-color: transparent !important; */
-    opacity:0.95;
+    box-shadow: 0px 0px 30px #f7f7f7;
   }
-  
-  
-  /* Add styles to the form container */
-  .container {
-    position: absolute;
-    right: 0;
-    margin: 20px;
-    max-width: 300px;
-    padding: 16px;
-    background-color: white;
+  label{
+    color: #fff;
+    font-weight: 700;
   }
-  
-  /* Full-width input fields */
-    input[type=text]  {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
+  .user-image{
+    height: 70px;
+  }
+  .auth-avatar{
+    text-align: center;
+    margin-top: -50px;
+  }
+  .auth{
+    margin-top: 35px;
     border: none;
-    background: #fff;
+    border-radius: 6px;
   }
-  
-  input[type=text]:focus {
-    background-color: #ddd;
-    outline: none;
+  .btn-my{
+    background-color: #d39e00;
+    border-color: #d39e00;
+    color: #fff;
   }
-  
-  /* Set a style for the submit button */
-  .btn {
-    background-color: rgb(37, 35, 35);
-    color: white;
-    
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
+  .simple-keyboard {
+    max-width: 850px;
   }
-  
-  .btn:hover {
-    opacity: 1;
+  .text-right.forget-pass a{
+    font-size: 12px;
+    color: #d39e00;
+    text-decoration: none;
   }
-  .input-group{
-    /* border-radius: 15px; */
-    background-color: rgb(37, 35, 35); 
-    height:40px;
-    margin-top: 20px;
-    max-width: auto;
+  .sign-up{
+    color: #fff;
   }
-  .material-icons {
-    color:white;
-    padding-top: 1%;
-    font-size: 40px;
+  .sign-up a{
+    color: #d39e00;
+    font-weight: 600;
+    text-decoration: none;
   }
+.margin{
+  margin: 20px;
+}
+.textarea{
+  display: flex;
+  justify-content: center;
+}

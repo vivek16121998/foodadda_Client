@@ -3,6 +3,7 @@ import { AuthService } from '../core/auth.service';
 import { Users } from '../models/Users';
 import { Roles } from '../models/Roles';
 import { Router } from '@angular/router';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-nav',
@@ -19,11 +20,13 @@ export class NavComponent implements OnInit {
   rolesTypes: string[] = [];
   moreRoles: Boolean = false;
   selectedRole!: string;
+  availableAmount!:number
 
   constructor(private auth: AuthService, private router: Router) { }
   ngOnInit() {
     this.auth.sessionUser.subscribe(data => {
       this.userName = data.userName;
+      this.availableAmount= data.wallet.availableAmount
       if (this.userName != null) {
         this.loggedIn = true;
         this.roles = data.roles;
@@ -34,6 +37,22 @@ export class NavComponent implements OnInit {
         this.emitevent();
       }
     });
+
+    interval(10).subscribe(
+      ()=>{
+        this.auth.sessionWallet.subscribe(
+          data=>{
+            
+            if(data.availableAmount==this.availableAmount){
+                 
+            }
+            else{
+              this.availableAmount=data.availableAmount
+            }
+          }
+        )
+      }
+    )
   }
 
   // confirmLogout(){}
