@@ -1,27 +1,27 @@
 import { environment as common } from './environment';
 
 
-const server="foodaddaserver-env.eba-mbyeegm9.ap-south-1.elasticbeanstalk.com"
+const server="ezuuoxnl4g.execute-api.ap-south-1.amazonaws.com"
 const portnumber="80"
-const applicationName="cibo"
+const applicationName="v1"
 
 export const environment = {
 
 
 
-    getRestaurants : "http://"+server+":"+portnumber+"/"+applicationName+"/searchAPI/viewAllRestaurants",
-    registerUser:"http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/userRegister/",
-    getOperatingRestaurants: "http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/allRestaurants",
-    deleteRestaurant:"http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/deleteRestaurant/",
-    newRestaurants:"http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/newlyAddedRestaurants",
-    approveRestaurant:"http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/grantPermission/",
-    getRatingsBasedRestaurant:"http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/ratingsBasedRestaurant/",
-    loginUri : "http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/userLogin",
-    getOrders:"http://"+server+":"+portnumber+"/"+applicationName+"/orderAPI/viewAllOrders/",
-    bookTable:"http://"+server+":"+portnumber+"/"+applicationName+"/booktableAPI/book/",
-    getRestaurantName:"http://"+server+":"+portnumber+"/"+applicationName+"/orderAPI/getRestaurantName/",
-    placeOrder:"http://"+server+":"+portnumber+"/"+applicationName+"/orderAPI/newOrder/",
-    getAreaRecommendations:"http://"+server+":"+portnumber+"/"+applicationName+"/recommendationAPI/restaurantsByArea",
+    getRestaurants : "https://"+server+"/"+applicationName+"/searchAPI/viewAllRestaurants",
+    registerUser:"https://"+server+"/"+applicationName+"/UserAPI/userRegister/",
+    getOperatingRestaurants: "https://"+server+"/"+applicationName+"/AdminAPI/allRestaurants",
+    deleteRestaurant:"https://"+server+"/"+applicationName+"/AdminAPI/deleteRestaurant/",
+    newRestaurants:"https://"+server+"/"+applicationName+"/AdminAPI/newlyAddedRestaurants",
+    approveRestaurant:"https://"+server+"/"+applicationName+"/AdminAPI/grantPermission/",
+    getRatingsBasedRestaurant:"https://"+server+"/"+applicationName+"/AdminAPI/ratingsBasedRestaurant/",
+    loginUri : "https://"+server+"/"+applicationName+"/UserAPI/userLogin",
+    getOrders:"https://"+server+"/"+applicationName+"/orderAPI/viewAllOrders/",
+    bookTable:"https://"+server+"/"+applicationName+"/booktableAPI/book/",
+    getRestaurantName:"https://"+server+"/"+applicationName+"/orderAPI/getRestaurantName/",
+    placeOrder:"https://"+server+"/"+applicationName+"/orderAPI/newOrder/",
+    getAreaRecommendations:"https://"+server+"/"+applicationName+"/recommendationAPI/restaurantsByArea",
 
 
 

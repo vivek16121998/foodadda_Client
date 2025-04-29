@@ -1,8 +1,8 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-const server="foodaddaserver-env.eba-mbyeegm9.ap-south-1.elasticbeanstalk.com"
-const portnumber="80"
+const server="localhost"
+const portnumber="4000"
 const applicationName="cibo"
 
 export const environment = {
