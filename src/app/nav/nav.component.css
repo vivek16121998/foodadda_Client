@@ -32,3 +32,13 @@ drop:hover {
 select.decorated option:hover{
   background-color:#0fc9c9  inset;
 }
+@media (max-width: 572px) {
+ 
+  .title{
+    display: none;
+  }
+  .navbar{
+    font-size: 2pc;
+  }
+}
+

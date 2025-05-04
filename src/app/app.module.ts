@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { RegisterService } from 'src/service/register.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,6 +50,7 @@ import { DeleteDishComponent } from './menu/delete-dish/delete-dish.component';
 import { ViewAllAddressComponent } from './user-address/view-all-address/view-all-address.component';
 import {UpdateAddressComponent} from './user-address/update-address/update-address.component';
 import { AddAddressComponent } from './user-address/add-address/add-address.component';
+import { AlertDialogComponent } from './components/alert-dialog/alert-dialog.component';
 
 
 
@@ -82,6 +84,7 @@ import { AddAddressComponent } from './user-address/add-address/add-address.comp
     ViewAllAddressComponent,
     UpdateAddressComponent,
     AddAddressComponent,
+    AlertDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,7 +95,8 @@ import { AddAddressComponent } from './user-address/add-address/add-address.comp
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    NgxPaginationModule
   ],
   providers: [RestaurantRegistrationService,UpdateAddressComponent,AddDishService,MenuComponent,UpdateDishService,VendorHomeService,VendorHomeComponent, MenuService,LoginService,LoginGuard,AuthService,RegisterService],
   bootstrap: [AppComponent]   

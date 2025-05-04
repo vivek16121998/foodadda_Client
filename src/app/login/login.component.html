@@ -6,7 +6,7 @@
         <div class="card auth">
             <div class="card-body auth-card">
                 <div class="auth-avatar">
-                    <img src="https://pluspng.com/img-png/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png" alt="user" class="user-image">
+                    <img src="assets/3135715.png" alt="user" class="user-image">
                 </div>
                 <form class="ml-3 mr-3 mb-3" [formGroup]="loginForm" (ngSubmit)="login()" style="text-align: left;">
                          <div class="form-group margin" >
@@ -30,11 +30,11 @@
                          </div>
                         
                         </form>
-                        <span *ngIf="errorMessage" class="text-danger " >
+                        <!-- <span *ngIf="errorMessage" class="text-danger " >
                                  {{errorMessage}}
-                        </span>
+                        </span> -->
                         <div class="text-center sign-up">
-                            Don`t have an account ? <a href="register/">Sign Up</a> hera.
+                            Don`t have an account ? <a mat-button class="rah" routerLink="/register">Register</a> hera.
                           </div>       
             </div>
         </div>

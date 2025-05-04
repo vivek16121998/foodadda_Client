@@ -1,0 +1,20 @@
+<div class="modal-content bg-white text-center shadow">
+    <div  [ngClass]="{
+          'modal-header bg-success text-white justify-content-center': data.type === 'success',
+          'modal-header bg-danger text-white justify-content-center': data.type === 'error'
+        }">
+      <mat-icon class="fs-1" style="width: fit-content; height: fit-content;">
+        {{ data.type === 'success' ? 'sentiment_very_satisfied' : 'sentiment_dissatisfied' }}
+      </mat-icon>
+    </div>
+    <div class="modal-body">
+      <h4 class="text-dark">{{ data.message }}</h4>
+      <button mat-button
+              [ngClass]="{
+                'btn btn-success btn-sm mt-3 px-4': data.type === 'success',
+                'btn btn-danger btn-sm mt-3 px-4': data.type === 'error'
+              }"
+              (click)="close()">OK</button>
+    </div>
+  </div>
+  

@@ -78,3 +78,10 @@
      grid-template-columns: auto;
    }
 }
+
+/* @media (max-width: 572px) {
+ 
+  .trend{
+    font-size: x-small;
+  }
+} */

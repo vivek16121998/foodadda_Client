@@ -24,21 +24,21 @@ export class RegisterService {
     role.roleType=data.userRole;
     roles.push(role);
     user.roles=roles;
-if(data.resState != ''){
-  var address:UserAddress = new UserAddress();
-address.userState=data.resState;
-address.addressLine1=data.addressLine1;
-address.addressLine2=data.addressLine2;
-address.area=data.area;
-address.city=data.city;
-address.pincode=data.pincode;
-address.userAddressName=data.addressName;
+// if(data.resState != ''){
+//   var address:UserAddress = new UserAddress();
+// address.userState=data.resState;
+// address.addressLine1=data.addressLine1;
+// address.addressLine2=data.addressLine2;
+// address.area=data.area;
+// address.city=data.city;
+// address.pincode=data.pincode;
+// address.userAddressName=data.addressName;
 
-user.addressList.push(address);
+// user.addressList.push(address);
  
-  console.log(address)
+//   console.log(address)
 
-}
+// }
         return this.http.post(environment.registerUser,user,{responseType:"text"});
   }
 

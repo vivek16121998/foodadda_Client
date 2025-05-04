@@ -2,23 +2,27 @@
 <div *ngIf="trendsPresent" >
   <h1 class="trend text-center">Check out some of our Trending Restaurants!!</h1>
   <div class="container-fluid">
-    <div class="row mt-4 col-container">
       <div class="grid-container">
       <div *ngFor="let r of trendingRestaurants" class="mr-auto ml-auto">
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title>{{r.restaurantName}}</mat-card-title>
-            <div *ngIf="r.restaurantType=='Nonveg'" class="das">
-              <mat-card-subtitle class="reg">{{r.restaurantType}}</mat-card-subtitle>
+        <div class="card mb-4 mx-auto" style="max-width: 350px;">
+          <!-- Header Row: Name & Type in one line -->
+          <div class="card-body py-2">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="card-title mb-0">{{ r.restaurantName }}</h4>
+              <h6 [ngClass]="r.restaurantType === 'Nonveg' ? 'text-danger' : 'text-success'" 
+                  matTooltip="Restaurant type" class="mb-0">
+                {{ r.restaurantType }}
+              </h6>
             </div>
-            <div *ngIf="!(r.restaurantType=='Nonveg')" class="das">
-              <mat-card-subtitle class="reg1">{{r.restaurantType}}</mat-card-subtitle>
-            </div>
-          </mat-card-header>
-          <img mat-card-image class="mag" src={{r.photoUrls[0]}} alt="Restaurant photo">
-          <mat-card-content>
+          </div>
+        
+          <!-- Restaurant Image -->
+          <img [src]="r.photoUrls[0]" class="card-img-top" alt="Restaurant photo" style="height: 150px; object-fit: cover;">
+        
+          <!-- Details Below -->
+          <div class="card-body pt-2">
             <p>
-              <mat-icon matTooltip="Average Rating" class="checked">star</mat-icon>{{r.avgRating}}
+              <mat-icon matTooltip="Average rating" class="checked">star</mat-icon>{{r.avgRating}}
             </p>
             <p>
               <mat-icon matTooltip="Address" class="bax1"> place</mat-icon>
@@ -30,14 +34,12 @@
             <p>Cost for Two : {{r.transaction.restaurantApproxCost}}</p>
             <p class="axn" matTooltip="Restaurant status" *ngIf="r.transaction.restaurantStatus">CURRENTLY OPEN</p>
             <p class="axn1" matTooltip="Restaurant status" *ngIf="!r.transaction.restaurantStatus">CURRENTLY CLOSED</p>
-          </mat-card-content>
-          <mat-card-actions>
+        
+            <!-- Action Button -->
             <button mat-button matTooltip="Click to check menu" class="btn1" (click)="checkMenu(r.restaurantId)">CHECK MENU</button>
-            <!-- <button mat-button class="btn2" (click)="bookTable(r.restaurantId)">BOOK A TABLE</button> -->
-          </mat-card-actions>
-        </mat-card>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 </div>

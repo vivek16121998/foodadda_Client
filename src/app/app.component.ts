@@ -15,6 +15,14 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(private auth: AuthService) { }
   ngOnInit() {
+    const data = JSON.parse(sessionStorage.getItem('user') || '{}');
+    this.auth.nextUser(data);
+    this.auth.sessionUser.subscribe(
+      data=>{
+        console.log(data)
+      }
+    )
+    this.auth.setWallet(data.wallet)
   }
   updateFromChild($event: any) {
     this.role = $event;

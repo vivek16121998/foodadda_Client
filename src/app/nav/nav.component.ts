@@ -21,13 +21,17 @@ export class NavComponent implements OnInit {
   moreRoles: Boolean = false;
   selectedRole!: string;
   availableAmount!:number
+  
 
   constructor(private auth: AuthService, private router: Router) { }
   ngOnInit() {
+
     this.auth.sessionUser.subscribe(data => {
+      console.log(data)
       this.userName = data.userName;
-      this.availableAmount= data.wallet.availableAmount
+      
       if (this.userName != null) {
+        this.availableAmount= data.wallet.availableAmount
         this.loggedIn = true;
         this.roles = data.roles;
         for (let r of this.roles) {
@@ -43,12 +47,15 @@ export class NavComponent implements OnInit {
         this.auth.sessionWallet.subscribe(
           data=>{
             
-            if(data.availableAmount==this.availableAmount){
+            if(data!=null){
+              if(data.availableAmount==this.availableAmount){
                  
+              }
+              else {
+                this.availableAmount=data.availableAmount
+              }
             }
-            else{
-              this.availableAmount=data.availableAmount
-            }
+            
           }
         )
       }
@@ -65,7 +72,9 @@ export class NavComponent implements OnInit {
     this.auth.user.userId = 0;
     this.rolesTypes = [];
     console.log(this.rolesTypes);
-    this.router.navigate(['/home'])
+    this.router.navigate(['/home']).then(() => {
+      window.location.reload();
+    });
   }
 
   rolesPage() {

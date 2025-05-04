@@ -1,4 +1,65 @@
-            
-            
-            
-            <!-- Your code goes here -->
+<div *ngIf="errorMessage" class="text-center my-5">
+    <div class="text-white fs-4 mb-3">{{errorMessage}}</div>
+  </div>
+<div class="container my-5" *ngIf="orderDetails.length>0">
+    <div class="d-flex justify-content-between align-items-center mb-3" >
+        <div class="d-flex justify-content-start">
+          <!-- Pagination Controls (Left Side) -->
+          <pagination-controls (pageChange)="currentPage = $event" class="d-flex justify-content-start mt-3" style="background-color: aliceblue;"></pagination-controls>
+        </div>
+    
+        <!-- Page Size Selector (Right Side) -->
+        <div class="d-flex justify-content-end" style="margin: 10px;">
+            <table style="background-color: aliceblue;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="pageSize" class="me-2" style="display: flex; justify-content: center;">Items per page</label>
+                        </td>
+                        <td> : </td>
+                        <td>
+                            <select id="pageSize" class="form-select w-auto" [(ngModel)]="pageSize" (change)="currentPage = 1">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                              </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          
+          
+        </div>
+    </div>
+    <div class="table-responsive shadow-sm rounded border p-3">
+       
+      <table class="table table-striped table-bordered align-middle text-center mb-0">
+        <thead class="table-dark">
+          <tr>
+              <th *ngFor="let Column of displayedColumns">{{Column}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders | paginate: { itemsPerPage: pageSize, currentPage: currentPage } let i=index">
+            <td>{{ order.orderId }}</td>
+            <td>{{order.restaurantName}}</td>
+            <td class="text-start">
+                <ul class="list-unstyled mb-0">
+                  <li *ngFor="let item of order.orderItemsList" class="mb-2">
+                    <strong>{{ item.dish.dishName }}</strong> ({{ item.dish.dishType }}) - ₹{{ item.dish.price }} × {{ item.qty }}
+                    <br />
+                    <small class="text-muted">{{ item.dish.dishDescription }}</small>
+                  </li>
+                </ul>
+              </td>
+            <td>₹{{ order.orderBill }}</td>
+            <td>
+                <span class="badge bg-success" *ngIf="order.orderStatus === 'ACTIVE'">Active</span>
+                <span class="badge bg-secondary" *ngIf="order.orderStatus !== 'ACTIVE'">{{ order.orderStatus }}</span>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+  

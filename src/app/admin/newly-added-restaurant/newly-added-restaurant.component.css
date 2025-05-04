@@ -84,16 +84,34 @@ opacity: 0.9;
   border:rounded;
 
 }
+
 .popup{
   border-radius: 7px;
+  background:white;
   margin:30px auto 0;
   padding:6px;  
+  /* // here it comes */
   position:absolute;
-  width:800px;
+  width:500px;
   top: 50%;
   left: 50%;
   margin-left: -300px;
   margin-top: -200px; 
+}
+
+@media (max-width: 500px) {
+ 
+  .popup{
+    border-radius: 7px;
+    background:white;
+    margin:30px auto 0;
+    padding:6px;  
+    /* // here it comes */
+    position:absolute;
+    width:200px;
+    top: 50%;
+    left: 50%;
+  }
 }
 .col{
   margin-left: 38px;

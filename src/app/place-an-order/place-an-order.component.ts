@@ -8,6 +8,8 @@ import { PlaceAnOrderService } from './place-an-order.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../core/auth.service';
+import { Users } from '../models/Users';
+import { AlertDialogComponent } from '../components/alert-dialog/alert-dialog.component';
 // import { Data } from '../place-an-order/data';
 
 @Component({
@@ -29,10 +31,12 @@ export class PlaceAnOrderComponent implements OnInit {
   restId = Number.parseInt(sessionStorage.getItem("restId") || '{}')
   flag!:boolean
   errorflag!:boolean
-delMsg:string="Deleted successfully"
+  user!:Users
+  disableplaceOrderbuttonflag!:boolean
+  delMsg:string="Deleted successfully"
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
   displayedColumns:string[] = ['name', 'quantity', 'price', 'remove'];
-  constructor(private router:Router, private orderService:PlaceAnOrderService,private _snackBar: MatSnackBar,private auth:AuthService) { 
+  constructor(private router:Router, private orderService:PlaceAnOrderService,private _snackBar: MatSnackBar,private auth:AuthService,private dialog: MatDialog) { 
     // this.order = this.data.storage;
     // e, private data:Data
   }
@@ -96,37 +100,48 @@ subtract(orderDish:OrderItems,qty:number){
       this.bill+= orderItem.dish.price*orderItem.qty;
     }
   }
-
-  placeTheOrder(){
-
-    this.flag=false
-    console.log(this.order)
+  placeTheOrder() {
+    this.disableplaceOrderbuttonflag = true;
+    this.flag = false;
+  
     this.orderService.placeTheOrder(this.userId || '{}', this.order).subscribe(
+      response => {
+        if (response) {
+          const message = `Order placed successfully! OrderId: ${response.orderId}`;
+          const dialogRef = this.dialog.open(AlertDialogComponent, {
+            data: { type: 'success', message }
+          });
+          this.user = JSON.parse(sessionStorage.getItem('user') || '{}');
+          this.user.wallet.availableAmount = response.availableAmount;
+          sessionStorage.setItem('user', JSON.stringify(this.user));
+          this.auth.setavailableAmount(response.availableAmount);
+          sessionStorage.removeItem('data');
+          sessionStorage.removeItem('restId');
+          // Auto-close after 10 seconds
 
-      response=>{
-        if(response){
-          console.log(response)
-          this.successMessage = "Order placed successfully! OrderId: "+response.orderId;
-          console.log(this.successMessage)
-
-          this.auth.setavailableAmount(response.availableAmount)
-          sessionStorage.removeItem("data")
-          sessionStorage.removeItem("restId")
-          this.flag=true
-          this.errorMessage = "";
-        }
-        else {
-
-          this.successMessage = "Order Not Placed. Please! try again";
+          dialogRef.afterClosed().subscribe(() => {
+            this.cleanupAfterSuccess(response);
+          });
+  
+        } else {
+          this.dialog.open(AlertDialogComponent, {
+            data: { type: 'error', message: 'Order not placed. Please try again.' }
+          });
         }
       },
       error => {
-        this.errorflag=true
-        this.errorMessage =error.error.message;
-        
+        this.dialog.open(AlertDialogComponent, {
+          data: { type: 'error', message: error.error.message || 'An error occurred.' }
+        });
+        this.disableplaceOrderbuttonflag = false;
       }
-    )
-
+    );
+  }
+  
+  
+  cleanupAfterSuccess(response: any) {
+    
+    this.router.navigate(['home/allRestaurants']);
   }
   goBack(){
     this.router.navigate(['/checkMenu', this.restId]);
@@ -135,11 +150,13 @@ subtract(orderDish:OrderItems,qty:number){
     this.router.navigate(['home/allRestaurants'])
   }
   close(){
+
     this.router.navigate(['home/allRestaurants'])
   }
   closeerror(){
     this.errorflag=false
     this.errorMessage=""
+    this.disableplaceOrderbuttonflag=false
   }
 
 

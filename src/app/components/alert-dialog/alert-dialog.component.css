@@ -1,0 +1,6 @@
+.modal-content {
+    min-height: max-content; /* 🔹 Or use height: 300px; if fixed */
+    padding: 10px;
+    border-radius: 8px;
+  }
+  

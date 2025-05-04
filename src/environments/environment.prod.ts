@@ -10,7 +10,7 @@ export const environment = {
 
 
     getRestaurants : "https://"+server+"/"+applicationName+"/searchAPI/viewAllRestaurants",
-    registerUser:"https://"+server+"/"+applicationName+"/UserAPI/userRegister/",
+    registerUser:"https://"+server+"/"+applicationName+"/UserAPI/userRegister",
     getOperatingRestaurants: "https://"+server+"/"+applicationName+"/AdminAPI/allRestaurants",
     deleteRestaurant:"https://"+server+"/"+applicationName+"/AdminAPI/deleteRestaurant/",
     newRestaurants:"https://"+server+"/"+applicationName+"/AdminAPI/newlyAddedRestaurants",
@@ -22,6 +22,8 @@ export const environment = {
     getRestaurantName:"https://"+server+"/"+applicationName+"/orderAPI/getRestaurantName/",
     placeOrder:"https://"+server+"/"+applicationName+"/orderAPI/newOrder/",
     getAreaRecommendations:"https://"+server+"/"+applicationName+"/recommendationAPI/restaurantsByArea",
+    getAddressList:"https://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/getAddressList/",
+    addAddress:"https://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/addAddress/",
 
 
 

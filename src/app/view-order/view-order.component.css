@@ -1,110 +1,303 @@
-
-  .container{
-    justify-content: center;
-    display:block;
-    margin: auto;
+.container{
+  justify-content: center;
+  display:block;
+  margin: auto;
+}
+.material-icons{
+color:red;
 }
 .checked{
-    color:orange;
-    font-size:20px;
-    margin:0px;
-  }
-
-  .ot{
-    justify-content: center;
+  color:orange;
+  font-size:20px;
+  margin:0px;
 }
-
-.btnn{
-  height:40px;
-  width: 200px;
-  background-color: rgb(37, 35, 35);
-  color:white;
-  font-size: 18px;
-  /* border-color: black; */
-  border-radius: 8px;
-  border:rounded;
+.checked2{
+  color:rgb(182, 236, 82);
+  font-size:20px;
+  
 }
-
 .dasd{
-  /* margin:10px; */
+text-align: center;
   font-size:50px;
-  margin-left: 225px;
+ 
   color:white;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  border:rounded;
-
+}
+.a{
+    float:right;
+    color:red;
+}
+.a1{
+  float:right;
+  color:green;
+}
+.card-title{
+    margin:0px;
+    font-weight: bolder;
+}
+.chef{
+  color:green;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: bold;
+}
+.card-text{
+  margin:0px;
+}
+.cuisine{
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.price{
+  font-weight: bold;
 }
 
-.modal-header{
-  padding: 0;
-  padding-bottom: 10px;
-  background-color:rgb(236, 55, 55)
+.crt{
+  size:small;
+  float:right;
+  padding:10px;
 }
+
+.card{
+  margin-top:40px;
+}
+
+.seecart{
+  margin-left: 20px;
+  margin-top: 20px;
+  background-color: mediumslateblue;
+}
+
+.cartDish{
+  font-size: medium;
+  color: rgb(81, 97, 48);
+  margin-left: 100px;
+}
+
+.ot{
+  justify-content: center;
+}
+
+.message{
+  margin: 40px;
+  align-content: center;
+  color: teal;
+}
+
+.tableColor{
+  background-color: rgb(73, 12, 30);
+  color: rgb(129, 107, 170);
+  text-decoration-color: rgb(96, 141, 199);
+
+
+}
+.ct{
+  color: rgb(138, 121, 29);
+}
+.bt{
+  size: 3cm;
+}
+.pto{
+  background-color: darkgreen;
+  margin-top: 10px;
+}
+.tableCart{
+margin:50px;
+margin-bottom: 0px;
+  width: 80%;
+}
+.tableCart1{
+/* margin:50px;
+margin-bottom: 0px; */
+  width: 80%;
+}
+.tableOrder{
+  text-align: center;
+}
+
+
+
+.button:focus, .button.active, .button.active:focus {
+  color: rgb(37, 35, 35) !important;
+  }
+  input[type=text]:focus, input[type=number]:focus , input[type=radio]:focus , select  {
+  background-color: #ddd;
+  outline: none;
+  }
+  input[type=text], input[type=number], select{
+    
+    background: #f1f1f1;
+  }
+  .mat-step-icon-selected{
+    background-color: rgb(37, 35, 35);
+  }
+  
+  
+  body, html {
+    height: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .card-header{
+    height: 50px;
+  }
+  
+  /* Full-width input fields */
+  
+  input{
+  width: auto;
+  }
+  
+  /* Set a style for the submit button */
+  .botn {
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+   background-color: rgb(37, 35, 35);
+   color: white;
+   width: 40%;
+   border: none;
+   cursor: pointer;
+   opacity: 0.9;
+  }
+  .btn {
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+   background-color: rgb(37, 35, 35);
+   color: white;
+   border: none;
+   cursor: pointer;
+  }
+  
+  .fnt{
+   
+    font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      font-size: 18px;
+  }
+  .set{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-weight: 300;
+  }
+  
+  .bgc {
+    background-color: rgb(37, 35, 35);
+    /* width: 100%; */
+    opacity: 0.9;
+   color: white;
+  }
+  
+  .crd{
+  width: 70%;
+  height: 100%;
+  
+  }
+  .btn:hover {
+    opacity: 1;
+  }
+  
+  .mainComponent{
+    height: 80%;
+  }
+  .mod{
+    opacity:0.9;
+    border:rounded;
+    border-radius: 20px;
+  
+  }
+  .btnn{
+    height:40px;
+    width: 200px;
+    background-color: rgb(37, 35, 35);
+    color:white;
+    font-size: 18px;
+    /* border-color: black; */
+    border-radius: 8px;
+    border:rounded;
+  }
+  .dasd{
+    margin:10px;
+    font-size:50px;
+    margin-left: 200px;
+    color:white;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border:rounded;
+  
+  }
+.column-align{
+text-align: left;
+}
+.popup{
+border-radius: 7px;
+background:white;
+margin:30px auto 0;
+padding:6px;  
+/* // here it comes */
+position:absolute;
+width:500px;
+top: 50%;
+left: 50%;
+margin-left: -300px;
+margin-top: -200px; 
+}
+
+@media (max-width: 500px) {
 
 .popup{
   border-radius: 7px;
-  /* background:#6b6a63; */
+  background:white;
   margin:30px auto 0;
   padding:6px;  
   /* // here it comes */
   position:absolute;
-  width:800px;
+  width:200px;
   top: 50%;
   left: 50%;
-  margin-left: -300px;
-  margin-top: -200px; 
 }
-/* .modal-content{
-  /* padding:20px; */
-  /* size: 100px; */
-/* }  */
-/* table {
-    width: 100%;
-    background: transparent;
-    text-align: center;
-    padding-top: 0%;
-    
-  } */
-  /* .mat-header-cell{
-   
-     padding-top: 0%;
-    background: transparent;
-    color: orange; 
-    text-align: center;
-    font-size: x-large;
-  }
-  .mat-cell{
-    
-    padding:0.4cm;
-    background: transparent;
-    color:orange; 
-    text-align: center;
-    font-size: large;
-  }
-  
- 
-  ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
-      background-color: transparent;
-  }
-   
-  ::ng-deep .mat-select-value {
-    color:rgba(12, 12, 11, 0.664); 
-    
-    text-align: center;
-    font-weight: bold;
-      font-size: 20px;
-  }
-  ::ng-deep .mat-select-arrow {
-      color: rgb(87, 84, 221);
-  }
-  ::ng-deep .mat-option{
-    padding: 0!important;
-  
-  }
-  ::ng-deep .mat-option-text {
-    background-color:rgb(195, 198, 236);
-      text-align: center;
-  } */
+}
+/* Style for the pagination container */
+.pagination {
+  background-color: #f9f9f9; /* Light background for the pagination */
+  border-radius: 8px;
+  padding: 10px;
+}
 
-  
+/* Style for page items */
+.pagination .page-item {
+  margin: 0 5px; /* Adds some space between pagination items */
+}
+
+/* Active page styling */
+.pagination .page-item.active .page-link {
+  background-color: #007bff; /* Active page color */
+  color: white;
+  border-color: #007bff;
+}
+
+/* Style for normal page links */
+.pagination .page-link {
+  color: #007bff; /* Link color */
+  border: 1px solid #007bff; /* Border around each page link */
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Hover effect on page links */
+.pagination .page-link:hover {
+  color: white;
+  background-color: #0056b3; /* Darker blue on hover */
+  border-color: #0056b3;
+}
+
+/* Disabled page styling */
+.pagination .page-item.disabled .page-link {
+  color: #6c757d; /* Color for disabled items */
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+

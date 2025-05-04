@@ -1,10 +1,88 @@
-<div class="container">
-
-    <div class="row">
-        <div class="col-md-8 offset-3">
+<div style="margin-top: 50px;">
+    <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">
+      <div class="card auth">
+        <div class="card-body auth-card">
+          <div class="auth-avatar text-center mb-3">
+            <img src="assets/3135715.png" alt="user" class="user-image">
+            <p style="color: white;">Registration</p>
+          </div>
           
-            <!--Form code goes here-->
-           
+          <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
+            
+            <!-- Full Name + Contact Number in the same row -->
+            <div class="row mb-4">
+              <div class="form-group col-md-6 text-center">
+                <label for="userName">Full Name</label>
+                <input class="form-control" type="text" id="userName" formControlName="userName">
+                <span class="text-danger" *ngIf="registerForm.controls['userName'].dirty && registerForm.controls['userName'].invalid">
+                  <i class="material-icons">{{ registerForm.controls['userName'].invalid ? 'cancel' : 'check_circle' }}</i>
+                  Only English Alphabet is allowed and First letter should be capital
+                </span>
+              </div>
+              <div class="form-group col-md-6 text-center">
+                <label for="contactNumber">Contact Number</label>
+                <input class="form-control" type="number" id="contactNumber" formControlName="contactNumber">
+                <span class="text-danger" *ngIf="registerForm.controls['contactNumber'].dirty && registerForm.controls['contactNumber'].invalid">
+                  <i class="material-icons">{{ registerForm.controls['contactNumber'].invalid ? 'cancel' : 'check_circle' }}</i>
+                  Contact Number Should Start with 6,7,8,9
+                </span>
+              </div>
+            </div>
+  
+            <!-- Email + Password in the same row -->
+            <div class="row mb-4">
+              <div class="form-group col-md-6 text-center">
+                <label for="emailId">Email</label>
+                <input class="form-control" type="email" id="emailId" formControlName="emailId">
+                <span class="text-danger" *ngIf="registerForm.controls['emailId'].dirty && registerForm.controls['emailId'].invalid">
+                  <i class="material-icons">{{ registerForm.controls['emailId'].invalid ? 'cancel' : 'check_circle' }}</i>
+                  Enter a Valid email address
+                </span>
+              </div>
+              <div class="form-group col-md-6 text-center">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" id="password" formControlName="password">
+                <span class="text-danger" *ngIf="registerForm.controls['password'].dirty && registerForm.controls['password'].invalid">
+                  <i class="material-icons">{{ registerForm.controls['password'].invalid ? 'cancel' : 'check_circle' }}</i>
+                  Password should contain at least one uppercase, one lowercase, one digit, and one special character (amongst -! &#64; #, $, %, ^, &, *) And Must be at least 8 characters!
+                </span>
+              </div>
+            </div>
+  
+            <!-- Confirm Password + User Role in the same row -->
+            <div class="row mb-4">
+              <div class="form-group col-md-6 text-center">
+                <label for="confirmPassword">Confirm Password</label>
+                <input class="form-control" type="password" id="confirmPassword" formControlName="confirmPassword">
+                <span class="text-danger" *ngIf="registerForm.controls['confirmPassword'].dirty && registerForm.controls['confirmPassword'].invalid">
+                  <i class="material-icons">{{ registerForm.controls['confirmPassword'].invalid ? 'cancel' : 'check_circle' }}</i>
+                  Password and Confirm Password Should be Same
+                </span>
+              </div>
+              <div class="form-group col-md-6 text-center">
+                <label for="userRole">User Role</label>
+                <select id="userRole" class="form-control" formControlName="userRole">
+                  <option value="">--Select--</option>
+                  <option *ngFor="let r of rolesTypes" [value]="r">{{ r }}</option>
+                </select>
+                <span id="userRoleError" class="text-danger" *ngIf="registerForm.controls['userRole'].invalid && registerForm.controls['userRole'].dirty">
+                  <i class="material-icons">{{ registerForm.controls['userRole'].invalid ? 'cancel' : 'check_circle' }}</i>
+                  User Role is Required
+                </span>
+              </div>
+            </div>
+  
+            <!-- Submit Button -->
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                      [ngClass]="registerForm.invalid ? 'btn-primary' : 'btn-success'" 
+                      [disabled]="registerForm.invalid">
+                Register
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  

@@ -19,8 +19,8 @@
     color:green;
   }
   .mag{
-    height:250px;
-    width:425px;
+    height:200px;
+    width:350px;
   }
   .mag:hover {
     transform: scale(1.35);

@@ -1,5 +1,8 @@
 <mat-toolbar class="navbar">
-    <a mat-button class="rah1" routerLink="home">Food Adda</a>
+    <div class="title">
+        <a mat-button class="rah1" routerLink="home">Food Adda</a>
+    </div>
+    
     <div  *ngIf="!loggedIn">
         <a mat-button class="rah" routerLink="login">Login</a>
     </div>
@@ -11,7 +14,7 @@
               
                 <option class="drop" *ngFor="let r of rolesTypes" [value]="r">{{r | titlecase}}</option> 
             </select>
-        <a mat-button class="rah" >&#8377; {{availableAmount}}</a>
+        <a *ngIf="selectedRole=='CUSTOMER'" mat-button class="rah" >&#8377; {{availableAmount}}</a>
         
         <a mat-button class="rah" (click)="logout()">Logout</a>
     

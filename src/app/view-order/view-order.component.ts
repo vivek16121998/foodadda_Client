@@ -5,15 +5,17 @@ import { Orders } from '../models/Orders';
 import {MessageService} from 'primeng/api';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
+import { OrderItems } from '../models/OrderItems';
+
 
 
 export interface PeriodicElement {
   orderId: number;
   orderBill: number;
   orderStatus: string;
-  orderItemsList: string;
   restaurantName: string;
-  // orderItemsList:Array<OrderItems>;
+  orderItemsList:Array<OrderItems>;
 }
 
 
@@ -33,28 +35,61 @@ export class ViewOrderComponent implements OnInit
   userId=sessionStorage.getItem('userId');
   show:boolean = true;
   dishId:number[]=new Array<number>();
-  restaurantNames:string[]=new Array<string>();
   errorMessage1: any;
-  constructor() { }
+  pageSize=5;
+  currentPage=1;
+  orders: PeriodicElement[] = [];
 
-  displayedColumns: string[] = ['orderId', 'restaurantName' , 'orderItemsList', 'billAmount', 'orderStatus' ];
-
-  @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
+  constructor(private service:ViewOrderService) { }
+  displayedColumns: string[] = ['Order Id' , 'Restaurant Name' ,'Dish Details', 'Bill Amount','Order Status' ];
+  
+  @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
 
 
 ngOnInit() {
 
  //your code goes here
+ this.getOrders();
 }
-getRestaurantName(orderList: any[]) {
-
+getRestaurantName(dishId:number[]){
 
  //your code goes here
+ this.service.getRestaurantNames(dishId).subscribe(
+  data=>{
+
+    for(let i=0;i<this.orderDetails.length;i++){
+      const order: PeriodicElement = {
+        orderId: this.orderDetails[i].orderId,
+        orderBill: this.orderDetails[i].orderBill,
+        orderStatus: this.orderDetails[i].orderStatus,
+        restaurantName:data[i],
+        orderItemsList: this.orderDetails[i].orderItemsList,
+      };
+      this.orders.push(order)
+      
+    }
+    this.orders.sort((a, b) => b.orderId - a.orderId);
+  }
+ )
 
 }
 getOrders() {
    
    //your code goes here
+   const dishidarray = new Array<number>();
+   this.service.getAllOrders().subscribe(
+    data=>{
+        this.orderDetails=data;
+        for(const orders of data){
+          dishidarray.push(orders.orderItemsList[0].dish.dishId);
+        }
+        this.getRestaurantName(dishidarray)
+    },
+    error=>{
+      this.errorMessage=error.error.message
+    }
+    
+   )
 }
 
 }

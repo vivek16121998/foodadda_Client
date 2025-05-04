@@ -14,8 +14,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatListModule } from '@angular/material/list';
 
-const MaterialComponents=[MatTooltipModule,MatSnackBarModule,MatStepperModule,BrowserAnimationsModule,MatCardModule,MatPaginatorModule,MatDialogModule,MatToolbarModule,MatIconModule,MatButtonModule,MatDividerModule,MatTableModule,MatSidenavModule,MatSelectModule,MatProgressSpinnerModule]
+const MaterialComponents=[MatTooltipModule,MatSnackBarModule,MatStepperModule,BrowserAnimationsModule,MatCardModule,MatPaginatorModule,MatDialogModule,MatToolbarModule,MatIconModule,MatButtonModule,MatDividerModule,MatTableModule,MatSidenavModule,MatSelectModule,MatProgressSpinnerModule,MatListModule]
 
 
 @NgModule({

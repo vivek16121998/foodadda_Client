@@ -1,103 +1,84 @@
-
-  <div *ngIf="!showTable" class="checked text-center " style="margin-top: 80px;">
-        <div style="color: white; font-size: 30px;">Please add some items first!</div>
-       
-        <br><br>
-        <button class="btn btn-primary text-center " style="max-width: fit-content;" (click)="goHome()">Add items</button>
-  </div>
-  <div *ngIf="showTable">
-    <br><br>
-    <table class="checked table tableCart" style="margin-left:auto; margin-right:auto;">
-      <thead class="tableCart">
-        <th>Dish Name</th>
-        <th>Dish Price</th>
-        <th>Dish Quantity</th>
-        <th>Delete Dish</th>
+<!-- Empty Cart Message -->
+<div *ngIf="!showTable" class="text-center my-5">
+  <div class="text-white fs-4 mb-3">Please add some items first!</div>
+  <br><br>
+  <button class="btn btn-primary btn-sm" (click)="goHome()">Add items</button>
+</div>
+<!-- Dish Table -->
+<div *ngIf="showTable" class="container my-4">
+  <div class="table-responsive mb-4">
+    <table class="table table-bordered table-striped text-center">
+      <thead class="table-dark">
+        <tr>
+          <th class="mb-3">Dish Name</th>
+          <th class="mb-3">Dish Price</th>
+          <th class="mb-3">Dish Quantity</th>
+          <th class="mb-3">Delete Dish</th>
+        </tr>
       </thead>
-      <tbody class="ot">
+      <tbody>
         <tr *ngFor="let orderDish of orderList">
-          <td>{{orderDish.dish.dishName}}</td>
-          <td>&#8377; {{orderDish.dish.price}}</td>
-          <td style="padding-left: 40px;">
-            {{orderDish.qty}}&nbsp;
-            <span class="material-icons"style="color:white;" (click)="add(orderDish,orderDish.qty)">
-              add_box
-              </span>
-            <span class="material-icons" style="color:white;" (click)="subtract(orderDish,orderDish.qty)">
-              indeterminate_check_box
-              </span>
+          <td>{{ orderDish.dish.dishName }}</td>
+          <td>&#8377; {{ orderDish.dish.price }}</td>
+          <td>
+            {{ orderDish.qty }}
+            <span class="material-icons text-success mx-1" (click)="add(orderDish, orderDish.qty)">add_box</span>
+            <span class="material-icons text-danger mx-1" (click)="subtract(orderDish, orderDish.qty)">indeterminate_check_box</span>
           </td>
-          <td style="padding-left: 45px;"><i matTooltip="Remove"
-            class="material-icons" (click)="removeItem(orderDish)">delete</i>
-            
+          <td>
+            <i class="material-icons text-danger" matTooltip="Remove" (click)="removeItem(orderDish)">delete</i>
           </td>
-         
         </tr>
 
+        <!-- ✅ Total Bill Row -->
+        <tr class="table-primary fw-bold">
+          <td colspan="2" class="text-end">Total Bill:</td>
+          <td colspan="2">&#8377; {{ bill }}</td>
+        </tr>
       </tbody>
-
     </table>
-    <table class="checked table tableCart1" style="margin-left:auto; margin-right:auto;">
-
-      <tr>
-        <td></td>
-        <td style="text-align: center;padding-left:60px;"><p class ="checked2">Total Bill : &#8377; {{bill}}</p></td>
-        
-        
-      </tr>
-      <tr>
-        <td style="padding-right: 280px;font-size: large;"><button class="btn btn-primary text-center" matTooltip="Click to add items" (click)="goBack()">Add items</button></td>
-        <td style="font-size: large; padding-left: 190px;"> <button class="btn btn-primary text-center"  matTooltip="Click to place order" (click)="placeTheOrder()">Place Order</button></td>
-      </tr>
-
-    </table>
-   
-    
   </div>
-<div class="container-fluid">
-  <div class="row" *ngIf="flag">
-      <div class="popup col-md-6 offset-3">
-          <div class="modal-dialog mod text-center">
-              <!-- Modal content-->
-              <div class="modal-content text-center">
-                  <div class="modal-header text-center" style="background-color: rgb(23, 179, 69);">
-                      <mat-icon class="dasd">sentiment_very_satisfied</mat-icon>
-                  </div>
-                  <div class="modal-body text-center">
 
-                      <div *ngIf="successMessage">
-
-                          <h1 style="color:black;">{{successMessage}}</h1><br>
-                          <button mat-button type="button" class="btnn  text-center"
-                              style="width:100%; color:antiquewhite; font-size: large;" (click)="close()">OK</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+  <!-- Action Buttons -->
+  <div class="row my-2 text-center">
+    <div class="col-12 col-md-6 mb-3">
+      <button class="btn btn-outline-primary btn-sm px-4" matTooltip="Click to add items" (click)="goBack()">Add items</button>
+    </div>
+    <div class="col-12 col-md-6 mb-3">
+      <button class="btn btn-success btn-sm px-4" matTooltip="Click to place order" (click)="placeTheOrder()" >Place Order</button>
+    </div>
   </div>
 </div>
-<div class="container-fluid">
-  <div class="row" *ngIf="errorflag">
-      <div class="popup col-md-6 offset-3">
-          <div class="modal-dialog mod text-center">
-              <!-- Modal content-->
-              <div class="modal-content text-center">
-                  <div class="modal-header text-center" style="background-color: red;">
-                      <mat-icon class="dasd">sentiment_very_satisfied</mat-icon>
-                  </div>
-                  <div class="modal-body text-center">
-
-                      <div *ngIf="errorMessage">
-
-                          <h1 style="color:black;">{{errorMessage}}</h1><br>
-                          <button mat-button type="button" class="btnn  text-center"
-                              style="width:100%; color:antiquewhite; font-size: large;" (click)="closeerror()">OK</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
+<!-- ✅ Success Modal -->
+<div class="container">
+  <div class="row justify-content-center mb-4" *ngIf="flag">
+    <div class="col-md-6">
+      <div class="modal-content bg-white text-center shadow">
+        <div class="modal-header bg-success text-white justify-content-center">
+          <mat-icon class="fs-1" style="color: green;">sentiment_very_satisfied</mat-icon>
+        </div>
+        <div class="modal-body">
+          <h4 *ngIf="successMessage" class="text-dark">{{ successMessage }}</h4>
+          <button mat-button class="btn btn-success btn-sm mt-3 px-4" (click)="close()">OK</button>
+        </div>
       </div>
+    </div>
   </div>
 </div>
-    
+
+<!-- ✅ Error Modal -->
+<div class="container">
+  <div class="row justify-content-center mb-4" *ngIf="errorflag">
+    <div class="col-md-6">
+      <div class="modal-content bg-white text-center shadow">
+        <div class="modal-header bg-danger text-white justify-content-center">
+          <mat-icon class="fs-1">sentiment_dissatisfied</mat-icon>
+        </div>
+        <div class="modal-body">
+          <h4 *ngIf="errorMessage" class="text-dark">{{ errorMessage }}</h4>
+          <button mat-button class="btn btn-danger btn-sm mt-3 px-4" (click)="closeerror()">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
