@@ -22,8 +22,9 @@ export const environment = {
     getRestaurantName:"https://"+server+"/"+applicationName+"/orderAPI/getRestaurantName/",
     placeOrder:"https://"+server+"/"+applicationName+"/orderAPI/newOrder/",
     getAreaRecommendations:"https://"+server+"/"+applicationName+"/recommendationAPI/restaurantsByArea",
-    getAddressList:"https://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/getAddressList/",
-    addAddress:"https://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/addAddress/",
+    getAddressList:"https://"+server+"/"+applicationName+"/UserAPI/getAddressList/",
+    addAddress:"https://"+server+"/"+applicationName+"/UserAPI/addAddress/",
+    deleteAddress:"https://"+server+"/"+applicationName+"/UserAPI/deleteAddress/",
 
 
 
