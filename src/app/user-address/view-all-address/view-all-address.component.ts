@@ -88,6 +88,8 @@ export class ViewAllAddressComponent implements OnInit {
   updateAddress(userAddress: UserAddress) {
 
    // Your code goes here
+   this.router.navigate(['/updateAddress'], { state: { data: userAddress } });
+
   }
 
   addAddress(){

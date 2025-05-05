@@ -25,7 +25,7 @@ export const environment = {
     getAddressList:"https://"+server+"/"+applicationName+"/UserAPI/getAddressList/",
     addAddress:"https://"+server+"/"+applicationName+"/UserAPI/addAddress/",
     deleteAddress:"https://"+server+"/"+applicationName+"/UserAPI/deleteAddress/",
-
+    updateAddress:"https://"+server+"/"+applicationName+"/UserAPI/updateAddress/",
 
 
  production: true

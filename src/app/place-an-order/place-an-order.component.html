@@ -45,40 +45,7 @@
       <button class="btn btn-outline-primary btn-sm px-4" matTooltip="Click to add items" (click)="goBack()">Add items</button>
     </div>
     <div class="col-12 col-md-6 mb-3">
-      <button class="btn btn-success btn-sm px-4" matTooltip="Click to place order" (click)="placeTheOrder()" >Place Order</button>
-    </div>
-  </div>
-</div>
-<!-- ✅ Success Modal -->
-<div class="container">
-  <div class="row justify-content-center mb-4" *ngIf="flag">
-    <div class="col-md-6">
-      <div class="modal-content bg-white text-center shadow">
-        <div class="modal-header bg-success text-white justify-content-center">
-          <mat-icon class="fs-1" style="color: green;">sentiment_very_satisfied</mat-icon>
-        </div>
-        <div class="modal-body">
-          <h4 *ngIf="successMessage" class="text-dark">{{ successMessage }}</h4>
-          <button mat-button class="btn btn-success btn-sm mt-3 px-4" (click)="close()">OK</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ✅ Error Modal -->
-<div class="container">
-  <div class="row justify-content-center mb-4" *ngIf="errorflag">
-    <div class="col-md-6">
-      <div class="modal-content bg-white text-center shadow">
-        <div class="modal-header bg-danger text-white justify-content-center">
-          <mat-icon class="fs-1">sentiment_dissatisfied</mat-icon>
-        </div>
-        <div class="modal-body">
-          <h4 *ngIf="errorMessage" class="text-dark">{{ errorMessage }}</h4>
-          <button mat-button class="btn btn-danger btn-sm mt-3 px-4" (click)="closeerror()">OK</button>
-        </div>
-      </div>
+      <button class="btn btn-success btn-sm px-4" matTooltip="Click to place order" (click)="placeTheOrder()" [disabled]="disableplaceOrderbuttonflag" >Place Order</button>
     </div>
   </div>
 </div>

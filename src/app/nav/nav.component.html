@@ -1,5 +1,5 @@
 <mat-toolbar class="navbar">
-    <div class="title">
+    <div >
         <a mat-button class="rah1" routerLink="home">Food Adda</a>
     </div>
     
@@ -7,8 +7,8 @@
         <a mat-button class="rah" routerLink="login">Login</a>
     </div>
     <div class="navbar a" *ngIf="loggedIn">
-        <mat-icon>account_circle</mat-icon>
-        <a mat-button class="rah" routerLink="home">Welcome {{userName | titlecase}}</a>
+        <mat-icon class="title">account_circle</mat-icon>
+        <a mat-button class="rah" routerLink="home" class="title">Welcome {{userName | titlecase}}</a>
         
             <select class="drop" [(ngModel)]="selectedRole" (change)="rolesPage()">
               

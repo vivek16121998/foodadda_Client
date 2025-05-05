@@ -36,7 +36,7 @@ export class ViewOrderComponent implements OnInit
   show:boolean = true;
   dishId:number[]=new Array<number>();
   errorMessage1: any;
-  pageSize=5;
+  pageSize=2;
   currentPage=1;
   orders: PeriodicElement[] = [];
 

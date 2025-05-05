@@ -3,13 +3,14 @@
         <i class="bi bi-plus-circle"></i> Add New Address
     </button>
 </div>
+
 <div *ngIf="errorMessage" class="text-center my-5">
     <div class="text-white fs-4 mb-3">{{errorMessage}}</div>
 </div>
 
 <div class="container my-5" *ngIf="userAddressList.length > 0">
 
-    <div class="d-flex justify-content-between align-items-center mb-3" >
+    <div class="d-flex justify-content-between align-items-center mb-3">
         <div class="d-flex justify-content-start">
             <!-- Pagination Controls (Left Side) -->
             <pagination-controls style="background-color: aliceblue;" (pageChange)="currentPage = $event" class="d-flex justify-content-start mt-3"></pagination-controls>
@@ -38,29 +39,25 @@
     </div>
 
     <!-- Address Table -->
-    <div class="table-responsive shadow-sm rounded border p-3">
+    <div class="table-responsive shadow-sm">
         <table class="table table-striped table-bordered align-middle text-center mb-0">
             <thead class="table-dark">
                 <tr>
-                    <!-- Hardcoded column names -->
+                    <!-- Updated column names -->
                     <th>Address Name</th>
                     <th>Address</th>
-                    <th>Area</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>Pincode</th>
-                    <th>Actions</th> <!-- Action column for Edit/Delete -->
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let address of userAddressList | paginate: { itemsPerPage: pageSize, currentPage: currentPage }">
-                    <!-- Address Data -->
-                    <td>{{ address.userAddressName }}</td>
-                    <td>{{ address.addressLine1 + ', ' + address.addressLine2 }}</td> <!-- Combined Address Lines -->
-                    <td>{{ address.area }}</td>
-                    <td>{{ address.city }}</td>
-                    <td>{{ address.userState }}</td>
-                    <td>{{ address.pincode }}</td>
+                    <!-- Combined Address Data in a single column -->
+                     <td>{{address.userAddressName}}</td>
+                    <td>
+                        {{ address.addressLine1 + ', ' + address.addressLine2 }}<br>
+                        {{ address.area }}, {{ address.city }}<br>
+                        {{ address.userState }} - {{ address.pincode }}
+                    </td>
                     <td>
                         <!-- Edit and Delete icons with Material Icons and Tooltips -->
                         <i class="material-icons text-primary mr-3" matTooltip="Edit" (click)="updateAddress(address)">

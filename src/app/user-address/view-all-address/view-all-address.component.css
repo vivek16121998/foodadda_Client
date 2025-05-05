@@ -105,3 +105,6 @@
    .footer1{
     margin-left: 76px;
    }
+   .material-icons {
+    margin-right: 10px; /* Adds space between icons */
+}

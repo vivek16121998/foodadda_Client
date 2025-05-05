@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { UserAddress } from 'src/app/models/UserAddress';
 import { Users } from 'src/app/models/Users';
+import { environment } from 'src/environments/environment';
 
 
 const url= "http://localhost:4000/cibo/UserAPI/updateAddress/";
@@ -12,7 +13,7 @@ const url= "http://localhost:4000/cibo/UserAPI/updateAddress/";
 })
 export class UpdateAddressService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   delete(addressId: String, userId: String): Observable<String> {
 
@@ -23,8 +24,8 @@ export class UpdateAddressService {
 
     return of();
   }
-  update(addressData:UserAddress,name:string) : Observable<String> {
+  update(addressData:UserAddress,userID:number) : Observable<string> {
 
-    return of();
+     return this.http.put(environment.updateAddress+userID, addressData,{responseType:"text"});
 }
 }

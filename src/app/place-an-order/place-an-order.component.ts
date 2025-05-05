@@ -102,7 +102,7 @@ subtract(orderDish:OrderItems,qty:number){
   }
   placeTheOrder() {
     this.disableplaceOrderbuttonflag = true;
-    this.flag = false;
+    this.flag = true;
   
     this.orderService.placeTheOrder(this.userId || '{}', this.order).subscribe(
       response => {
@@ -130,10 +130,12 @@ subtract(orderDish:OrderItems,qty:number){
         }
       },
       error => {
+        
         this.dialog.open(AlertDialogComponent, {
           data: { type: 'error', message: error.error.message || 'An error occurred.' }
         });
         this.disableplaceOrderbuttonflag = false;
+        
       }
     );
   }

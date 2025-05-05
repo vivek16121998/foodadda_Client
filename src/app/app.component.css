@@ -20,6 +20,7 @@
     background-size: cover;
     /* object-fit: scale-down; */
     margin:0px;
+    
   }
   .sidenav{
     background: transparent;
@@ -73,3 +74,34 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+.menu-button {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  background: white;
+  border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+}
+.example-container {
+  height: 100vh;
+  
+}
+
+.cvv {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+app-foot {
+  position: relative;  /* Ensure it's not overlapping */
+  z-index: 10;         /* Keep it above drawer content */
+  margin-top: auto;    /* Push it to the bottom of the page */
+}
+

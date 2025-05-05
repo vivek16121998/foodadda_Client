@@ -22,7 +22,7 @@ export const environment = {
   getAddressList:"http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/getAddressList/",
   addAddress:"http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/addAddress/",
   deleteAddress:"http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/deleteAddress/",
-
+  updateAddress:"http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/updateAddress/",
   production: false
   
 };
