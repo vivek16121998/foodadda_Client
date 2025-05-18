@@ -1,9 +1,9 @@
 import { environment as common } from './environment';
 
 
-const server="ezuuoxnl4g.execute-api.ap-south-1.amazonaws.com"
+const server="backend.foodadda.co.in"
 const portnumber="80"
-const applicationName="v1"
+const applicationName="cibo"
 
 export const environment = {
 
