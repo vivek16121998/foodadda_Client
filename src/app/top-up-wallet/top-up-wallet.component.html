@@ -1,0 +1,36 @@
+<div class="wallet-container">
+    <h2>Wallet</h2>
+  
+    <div class="balance-section ">
+      <span class="label">Remaining Balance:</span>
+      <span class="amount">₹{{ balance | number:'1.2-2' }}</span>
+    </div>
+  
+    <form [formGroup]="walletForm" (ngSubmit)="topUpWallet()" >
+        <table>
+            <tr>
+                <td>Enter Top-up Amount : </td>
+                <td>
+                    <input id="topUpAmount" type="number" formControlName="topUpAmount" min="1" class="form-control" />
+                </td>
+            </tr>
+        </table>
+  
+      <div class="error" *ngIf="walletForm.get('topUpAmount')?.touched && walletForm.get('topUpAmount')?.invalid">
+        <div *ngIf="walletForm.get('topUpAmount')?.hasError('required')">Amount is required.</div>
+        <div *ngIf="walletForm.get('topUpAmount')?.hasError('min')">Amount must be greater than 0.</div>
+      </div>
+  
+      <button
+        type="submit"
+        class="btn"
+        [ngClass]="walletForm.valid ? 'btn-success' : 'btn-primary'"
+        [disabled]="walletForm.invalid"
+      >
+        Top Up
+      </button>
+    </form>
+  
+    <p *ngIf="message" class="message">{{ message }}</p>
+  </div>
+  

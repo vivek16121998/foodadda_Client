@@ -40,6 +40,10 @@
         <mat-icon class="custom_menu_icon">home</mat-icon>
         <p class="menu_p">Address Book</p>
       </div>
+      <div class="content" mat-list-item [routerLinkActive]="['is-active']" routerLink="home/wallet">
+        <mat-icon class="custom_menu_icon">account_balance_wallet</mat-icon>
+        <p class="menu_p">Top Up Wallet</p>
+      </div>
     </div>
 
     <!-- Vendor Menu -->

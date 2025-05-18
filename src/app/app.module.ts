@@ -51,6 +51,7 @@ import { ViewAllAddressComponent } from './user-address/view-all-address/view-al
 import {UpdateAddressComponent} from './user-address/update-address/update-address.component';
 import { AddAddressComponent } from './user-address/add-address/add-address.component';
 import { AlertDialogComponent } from './components/alert-dialog/alert-dialog.component';
+import { TopUpWalletComponent } from './top-up-wallet/top-up-wallet.component';
 
 
 
@@ -85,6 +86,7 @@ import { AlertDialogComponent } from './components/alert-dialog/alert-dialog.com
     UpdateAddressComponent,
     AddAddressComponent,
     AlertDialogComponent,
+    TopUpWalletComponent,
   ],
   imports: [
     BrowserModule,

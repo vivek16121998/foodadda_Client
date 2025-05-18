@@ -85,70 +85,76 @@ successMsg:string="Item added successfully"
   }
 
   addToCart(dish:Dish,quantity:number){
-    if(this.user.userId==null){
-      this.router.navigate(['login/'])
-    }
-    else{
-      for(let r of this.user.roles){
-        if(r.roleType=="CUSTOMER"){
-            this.cust=true;
+    this.auth.sessionUser.subscribe(
+      data=>{
+        if(data.userId==null){
+          this.router.navigate(['login/'])
         }
-      }
-      if(this.cust==false){
-        this.router.navigate(['login/']);
-        //this.errorMessage="Sorry you can not avail this functionality. Please login as a CUSTOMER to do so.";
-  
-      }
-  
-      this._snackBar.open(this.successMsg, "", {
-        duration: 2000,
-      });
-  
-      
-      if(this.order!=null){
-        this.orderList = this.order.orderItemsList
-      }
-      this.itemAdded=false
-      for(let item of this.orderList){
-        if(item.dish.dishId==dish.dishId){
-          item.qty+=1;
-          this.itemAdded=true;
-        }
-      }
-        for(let item of this.orderList2){
-          if(item.dish.dishId==dish.dishId){
-            item.qty+=1;
+        else{
+          for(let r of this.user.roles){
+            if(r.roleType=="CUSTOMER"){
+                this.cust=true;
+            }
           }
+          if(this.cust==false){
+            this.router.navigate(['login/']);
+            //this.errorMessage="Sorry you can not avail this functionality. Please login as a CUSTOMER to do so.";
+      
+          }
+      
+          this._snackBar.open(this.successMsg, "", {
+            duration: 2000,
+          });
+      
+          
+          if(this.order!=null){
+            this.orderList = this.order.orderItemsList
+          }
+          this.itemAdded=false
+          for(let item of this.orderList){
+            if(item.dish.dishId==dish.dishId){
+              item.qty+=1;
+              this.itemAdded=true;
+            }
+          }
+            for(let item of this.orderList2){
+              if(item.dish.dishId==dish.dishId){
+                item.qty+=1;
+              }
+          }
+          if(this.itemAdded==false){
+            this.orderItem = new OrderItems();
+            this.orderItem.orderItemsId=0;
+            this.orderItem.dish= dish;
+            this.orderItem.qty = quantity;
+        
+            this.orderList.push(this.orderItem);
+          }
+      
+      
+            
+          
+          console.log("item added to cart")
+          
+          this.totalBill();
+          console.log("bill is"+this.bill);
+          // this.order.orderId = 0;
+          if(this.order!=null){
+            this.order.orderBill = this.bill;
+            
+            this.order.orderItemsList = this.orderList;
+            this.order.orderStatus = "ACTIVE";
+          }
+          console.log(this.order)
+          // console.log(this.order.orderItemsList)
+          
+          // this.data.storage = this.order;
+          sessionStorage.setItem("data", JSON.stringify(this.order))
+        }
       }
-      if(this.itemAdded==false){
-        this.orderItem = new OrderItems();
-        this.orderItem.orderItemsId=0;
-        this.orderItem.dish= dish;
-        this.orderItem.qty = quantity;
+      
+    )
     
-        this.orderList.push(this.orderItem);
-      }
-  
-  
-        
-      
-      console.log("item added to cart")
-      
-      this.totalBill();
-      console.log("bill is"+this.bill);
-      // this.order.orderId = 0;
-      if(this.order!=null){
-        this.order.orderBill = this.bill;
-        
-        this.order.orderItemsList = this.orderList;
-        this.order.orderStatus = "ACTIVE";
-      }
-      console.log(this.order)
-      // console.log(this.order.orderItemsList)
-      
-      // this.data.storage = this.order;
-      sessionStorage.setItem("data", JSON.stringify(this.order))
-    }
     
     
   }

@@ -26,6 +26,7 @@ import { DeleteDishComponent } from './menu/delete-dish/delete-dish.component';
 import { ViewAllAddressComponent } from './user-address/view-all-address/view-all-address.component';
 import { UpdateAddressComponent } from './user-address/update-address/update-address.component';
 import { AddAddressComponent } from './user-address/add-address/add-address.component';
+import { TopUpWalletComponent } from './top-up-wallet/top-up-wallet.component';
 
 
 
@@ -59,6 +60,7 @@ const routes: Routes = [
   { path: "placeOrder", component: PlaceAnOrderComponent, canActivate: [LoginGuard] },
   { path: "home/cart", component: PlaceAnOrderComponent, canActivate: [LoginGuard] },
   { path: "home/addressbook", component: ViewAllAddressComponent, canActivate:[LoginGuard]},
+  { path: "home/wallet", component: TopUpWalletComponent, canActivate:[LoginGuard]},
   { path: "updateAddress", component: UpdateAddressComponent, canActivate:[LoginGuard]},
   { path: "addAddress", component: AddAddressComponent, canActivate:[LoginGuard]},
 
