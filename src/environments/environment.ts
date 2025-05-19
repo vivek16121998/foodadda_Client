@@ -3,26 +3,25 @@
 // The list of file replacements can be found in `angular.json`.
 const server="localhost"
 const portnumber="4000"
-const applicationName="cibo"
 
 export const environment = {
-  getRestaurants : "http://"+server+":"+portnumber+"/"+applicationName+"/searchAPI/viewAllRestaurants",
-  registerUser:"http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/userRegister",
-  getOperatingRestaurants: "http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/allRestaurants",
-  deleteRestaurant:"http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/deleteRestaurant/",
-  newRestaurants:"http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/newlyAddedRestaurants",
-  approveRestaurant:"http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/grantPermission/",
-  getRatingsBasedRestaurant:"http://"+server+":"+portnumber+"/"+applicationName+"/AdminAPI/ratingsBasedRestaurant/",
-  loginUri : "http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/userLogin",
-  getOrders:"http://"+server+":"+portnumber+"/"+applicationName+"/orderAPI/viewAllOrders/",
-  bookTable:"http://"+server+":"+portnumber+"/"+applicationName+"/booktableAPI/book/",
-  getRestaurantName:"http://"+server+":"+portnumber+"/"+applicationName+"/orderAPI/getRestaurantName/",
-  placeOrder:"http://"+server+":"+portnumber+"/"+applicationName+"/orderAPI/newOrder/",
-  getAreaRecommendations:"http://"+server+":"+portnumber+"/"+applicationName+"/recommendationAPI/restaurantsByArea",
-  getAddressList:"http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/getAddressList/",
-  addAddress:"http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/addAddress/",
-  deleteAddress:"http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/deleteAddress/",
-  updateAddress:"http://"+server+":"+portnumber+"/"+applicationName+"/UserAPI/updateAddress/",
+  getRestaurants : "http://"+server+":"+portnumber+"/searchAPI/viewAllRestaurants",
+  registerUser:"http://"+server+":"+portnumber+"/UserAPI/userRegister",
+  getOperatingRestaurants: "http://"+server+":"+portnumber+"/AdminAPI/allRestaurants",
+  deleteRestaurant:"http://"+server+":"+portnumber+"/AdminAPI/deleteRestaurant/",
+  newRestaurants:"http://"+server+":"+portnumber+"/AdminAPI/newlyAddedRestaurants",
+  approveRestaurant:"http://"+server+":"+portnumber+"/AdminAPI/grantPermission/",
+  getRatingsBasedRestaurant:"http://"+server+":"+portnumber+"/AdminAPI/ratingsBasedRestaurant/",
+  loginUri : "http://"+server+":"+portnumber+"/UserAPI/userLogin",
+  getOrders:"http://"+server+":"+portnumber+"/orderAPI/viewAllOrders/",
+  bookTable:"http://"+server+":"+portnumber+"/booktableAPI/book/",
+  getRestaurantName:"http://"+server+":"+portnumber+"/orderAPI/getRestaurantName/",
+  placeOrder:"http://"+server+":"+portnumber+"/orderAPI/newOrder/",
+  getAreaRecommendations:"http://"+server+":"+portnumber+"/recommendationAPI/restaurantsByArea",
+  getAddressList:"http://"+server+":"+portnumber+"/UserAPI/getAddressList/",
+  addAddress:"http://"+server+":"+portnumber+"/UserAPI/addAddress/",
+  deleteAddress:"http://"+server+":"+portnumber+"/UserAPI/deleteAddress/",
+  updateAddress:"http://"+server+":"+portnumber+"/UserAPI/updateAddress/",
   production: false
   
 };
@@ -35,19 +34,19 @@ export const environment = {
 
 
 
-//     getRestaurants : "https://"+server+"/"+applicationName+"/searchAPI/viewAllRestaurants",
-//     registerUser:"https://"+server+"/"+applicationName+"/UserAPI/userRegister/",
-//     getOperatingRestaurants: "https://"+server+"/"+applicationName+"/AdminAPI/allRestaurants",
-//     deleteRestaurant:"https://"+server+"/"+applicationName+"/AdminAPI/deleteRestaurant/",
-//     newRestaurants:"https://"+server+"/"+applicationName+"/AdminAPI/newlyAddedRestaurants",
-//     approveRestaurant:"https://"+server+"/"+applicationName+"/AdminAPI/grantPermission/",
-//     getRatingsBasedRestaurant:"https://"+server+"/"+applicationName+"/AdminAPI/ratingsBasedRestaurant/",
-//     loginUri : "https://"+server+"/"+applicationName+"/UserAPI/userLogin",
-//     getOrders:"https://"+server+"/"+applicationName+"/orderAPI/viewAllOrders/",
-//     bookTable:"https://"+server+"/"+applicationName+"/booktableAPI/book/",
-//     getRestaurantName:"https://"+server+"/"+applicationName+"/orderAPI/getRestaurantName/",
-//     placeOrder:"https://"+server+"/"+applicationName+"/orderAPI/newOrder/",
-//     getAreaRecommendations:"https://"+server+"/"+applicationName+"/recommendationAPI/restaurantsByArea",
+//     getRestaurants : "https://"+server+"/searchAPI/viewAllRestaurants",
+//     registerUser:"https://"+server+"/UserAPI/userRegister/",
+//     getOperatingRestaurants: "https://"+server+"/AdminAPI/allRestaurants",
+//     deleteRestaurant:"https://"+server+"/AdminAPI/deleteRestaurant/",
+//     newRestaurants:"https://"+server+"/AdminAPI/newlyAddedRestaurants",
+//     approveRestaurant:"https://"+server+"/AdminAPI/grantPermission/",
+//     getRatingsBasedRestaurant:"https://"+server+"/AdminAPI/ratingsBasedRestaurant/",
+//     loginUri : "https://"+server+"/UserAPI/userLogin",
+//     getOrders:"https://"+server+"/orderAPI/viewAllOrders/",
+//     bookTable:"https://"+server+"/booktableAPI/book/",
+//     getRestaurantName:"https://"+server+"/orderAPI/getRestaurantName/",
+//     placeOrder:"https://"+server+"/orderAPI/newOrder/",
+//     getAreaRecommendations:"https://"+server+"/recommendationAPI/restaurantsByArea",
 
 
 
