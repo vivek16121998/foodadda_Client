@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../core/auth.service';
+import { Users } from '../models/Users';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertDialogComponent } from '../components/alert-dialog/alert-dialog.component';
+import { TopUpWalletService } from './top-up-wallet.service';
 
 @Component({
   selector: 'app-top-up-wallet',
@@ -11,9 +15,9 @@ export class TopUpWalletComponent {
 
   walletForm!: FormGroup;
   balance!: number
-  message: string = '';
+  user!:Users
 
-  constructor(private fb: FormBuilder,private auth:AuthService) {}
+  constructor(private fb: FormBuilder,private auth:AuthService,private dialog: MatDialog,private service:TopUpWalletService) {}
 
   ngOnInit(): void {
 
@@ -24,6 +28,13 @@ export class TopUpWalletComponent {
         
       }
     )
+    this.auth.sessionUser.subscribe(
+      data=>{
+        
+        this.user=data
+        
+      }
+    )
     this.walletForm = this.fb.group({
       topUpAmount: [null, [Validators.required, Validators.min(1)]]
     });
@@ -31,13 +42,31 @@ export class TopUpWalletComponent {
 
   topUpWallet(): void {
     if (this.walletForm.invalid) {
-      this.message = 'Please enter a valid amount greater than 0.';
-      return;
+      const message = `Please enter a valid amount greater than 0.`;
+      const dialogRef = this.dialog.open(AlertDialogComponent, {
+        data: { type: 'error', message}
+      });
+
+    }
+    else{
+       this.service.topUpWallet(this.walletForm.get('topUpAmount')?.value,this.user.userId).subscribe(
+        data=>{
+          this.user.wallet=data
+          this.auth.nextUser(this.user)
+          this.auth.setWallet(data)
+          const message = ` Top-up successful. Your new wallet balance is ₹${data.availableAmount}`;
+          const dialogRef = this.dialog.open(AlertDialogComponent, {
+            data: { type: 'success', message}
+          });
+        },
+        error=>{
+          this.dialog.open(AlertDialogComponent, {
+            data: { type: 'error', message: error.error.message || 'An error occurred.' }
+          });
+        }
+       )
     }
 
-    const amount = this.walletForm.value.topUpAmount;
-    this.balance += amount;
-    this.message = `Successfully topped up ₹${amount.toFixed(2)}`;
-    this.walletForm.reset();
+
   }
 }
