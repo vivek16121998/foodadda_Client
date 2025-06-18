@@ -42,9 +42,9 @@ export class TopUpWalletComponent {
 
   topUpWallet(): void {
     if (this.walletForm.invalid) {
-      const message = `Please enter a valid amount greater than 0.`;
+      
       const dialogRef = this.dialog.open(AlertDialogComponent, {
-        data: { type: 'error', message}
+        data: { type: 'error', message:`Please enter a valid amount greater than 0.`}
       });
 
     }
@@ -54,9 +54,9 @@ export class TopUpWalletComponent {
           this.user.wallet=data
           this.auth.nextUser(this.user)
           this.auth.setWallet(data)
-          const message = ` Top-up successful. Your new wallet balance is ₹${data.availableAmount}`;
+          
           const dialogRef = this.dialog.open(AlertDialogComponent, {
-            data: { type: 'success', message}
+            data: { type: 'success', message:` Top-up successful. Your new wallet balance is ₹${data.availableAmount}`}
           });
         },
         error=>{
