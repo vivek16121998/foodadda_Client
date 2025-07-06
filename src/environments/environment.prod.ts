@@ -5,6 +5,7 @@ const server="ezuuoxnl4g.execute-api.ap-south-1.amazonaws.com"
 const portnumber="80"
 const applicationName="v1"
 
+
 export const environment = {
 
 
