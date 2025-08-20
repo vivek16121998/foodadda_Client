@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ChatSupportService } from './chat-support.service';
+import { v4 as uuidv4 } from 'uuid';
 interface ChatMessage {
   sender: 'user' | 'bot';
   text: string;
@@ -22,7 +23,8 @@ export class ChatSupportComponent {
    constructor(private service: ChatSupportService) {}
 
    ngOnInit(): void {
-    this.sessionIdKey =  crypto.randomUUID();
+    this.sessionIdKey = uuidv4();
+    console.log(this.sessionIdKey)
 
     this.messages.push({ sender: 'bot', text: "Hello! I'm FoodAdda Chat Support Assistant, here to help you with food ordering, delivery status, menu browsing, offers, and any other food-related questions you might have. How can I assist you today?"});
 
