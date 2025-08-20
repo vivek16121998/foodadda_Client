@@ -23,6 +23,7 @@ export const environment = {
   deleteAddress:"http://"+server+":"+portnumber+"/UserAPI/deleteAddress/",
   updateAddress:"http://"+server+":"+portnumber+"/UserAPI/updateAddress/",
   topUpWallet:"http://"+server+":"+portnumber+"/UserAPI/updateWalletBalance/",
+  agentresponse:"http://"+server+":"+portnumber+"/AgentAPI/",
   production: false
   
 };

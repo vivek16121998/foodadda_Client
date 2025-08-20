@@ -52,6 +52,8 @@ import {UpdateAddressComponent} from './user-address/update-address/update-addre
 import { AddAddressComponent } from './user-address/add-address/add-address.component';
 import { AlertDialogComponent } from './components/alert-dialog/alert-dialog.component';
 import { TopUpWalletComponent } from './top-up-wallet/top-up-wallet.component';
+import { ChatSupportComponent } from './chat-support/chat-support.component';
+
 
 
 
@@ -87,6 +89,7 @@ import { TopUpWalletComponent } from './top-up-wallet/top-up-wallet.component';
     AddAddressComponent,
     AlertDialogComponent,
     TopUpWalletComponent,
+    ChatSupportComponent,
   ],
   imports: [
     BrowserModule,

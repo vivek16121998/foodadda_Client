@@ -1,0 +1,22 @@
+<div class="chat-wrapper">
+    <div class="chat-window" #chatWindow>
+      <div *ngFor="let msg of messages" [ngClass]="['chat-bubble', msg.sender]">
+        <div class="message-text">{{ msg.text }}</div>
+      </div>
+    </div>
+  
+    <form (submit)="sendMessage(); $event.preventDefault();" class="input-area">
+      <input
+        type="text"
+        [(ngModel)]="userInput"
+        name="userInput"
+        placeholder="Type your message..."
+        autocomplete="off"
+        required
+        [disabled]="loading"
+      />
+      <button type="submit" [disabled]="!userInput.trim() || loading">
+        {{ loading ? 'Sending...' : 'Send' }}
+      </button>
+    </form>
+  </div>

@@ -27,6 +27,7 @@ import { ViewAllAddressComponent } from './user-address/view-all-address/view-al
 import { UpdateAddressComponent } from './user-address/update-address/update-address.component';
 import { AddAddressComponent } from './user-address/add-address/add-address.component';
 import { TopUpWalletComponent } from './top-up-wallet/top-up-wallet.component';
+import { ChatSupportComponent } from './chat-support/chat-support.component';
 
 
 
@@ -63,6 +64,7 @@ const routes: Routes = [
   { path: "home/wallet", component: TopUpWalletComponent, canActivate:[LoginGuard]},
   { path: "updateAddress", component: UpdateAddressComponent, canActivate:[LoginGuard]},
   { path: "addAddress", component: AddAddressComponent, canActivate:[LoginGuard]},
+  { path: "chat-support",component:ChatSupportComponent,canActivate:[LoginGuard]}
 
 
 

@@ -1,0 +1,68 @@
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ChatSupportService } from './chat-support.service';
+interface ChatMessage {
+  sender: 'user' | 'bot';
+  text: string;
+}
+
+@Component({
+  selector: 'app-chat-support',
+  templateUrl: './chat-support.component.html',
+  styleUrls: ['./chat-support.component.css']
+})
+export class ChatSupportComponent {
+
+  messages: ChatMessage[] = [];
+  userInput: string = '';
+  loading: boolean = false;
+  private sessionIdKey = 'chatSessionId';
+
+  @ViewChild('chatWindow') private chatWindow!: ElementRef;
+
+   constructor(private service: ChatSupportService) {}
+
+   ngOnInit(): void {
+    this.sessionIdKey =  crypto.randomUUID();
+
+    this.messages.push({ sender: 'bot', text: "Hello! I'm FoodAdda Chat Support Assistant, here to help you with food ordering, delivery status, menu browsing, offers, and any other food-related questions you might have. How can I assist you today?"});
+
+  }
+   
+
+
+ 
+
+  scrollToBottom(): void {
+    try {
+      this.chatWindow.nativeElement.scrollTop = this.chatWindow.nativeElement.scrollHeight;
+    } catch {}
+  }
+
+  sendMessage() {
+    if (!this.userInput.trim()) return;
+  
+    // Add user message
+    this.messages.push({ sender: 'user', text: this.userInput });
+    const messageToSend = this.userInput;
+    this.userInput = '';
+    this.loading = true;
+  
+    setTimeout(() => this.scrollToBottom(), 0); // scroll after user msg
+  
+    this.service.agentResponse(this.sessionIdKey, messageToSend).subscribe(
+      (res) => {
+        this.messages.push({ sender: 'bot', text: res.response || 'No response' });
+        this.loading = false;
+  
+        setTimeout(() => this.scrollToBottom(), 0); // scroll after bot msg
+      },
+      error => {
+        this.messages.push({ sender: 'bot', text: 'Error: Could not get response.' });
+        this.loading = false;
+  
+        setTimeout(() => this.scrollToBottom(), 0);
+      }
+    );
+  }
+  
+}

@@ -28,6 +28,7 @@ export const environment = {
     deleteAddress:"https://"+server+"/"+applicationName+"/UserAPI/deleteAddress/",
     updateAddress:"https://"+server+"/"+applicationName+"/UserAPI/updateAddress/",
     topUpWallet:"https://"+server+"/"+applicationName+"/UserAPI/updateWalletBalance/",
+    agentresponse:"https://"+server+":"+applicationName+"/AgentAPI/",
 
 
  production: true

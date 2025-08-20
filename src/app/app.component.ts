@@ -14,7 +14,11 @@ export class AppComponent implements OnInit, OnDestroy {
   role!: string;
   drawerMode: 'side' | 'over' = 'side';
   isScreenLarge = true;
+  isChatOpen = false;
 
+  toggleChat() {
+    this.isChatOpen = !this.isChatOpen;
+  }
   constructor(private auth: AuthService,private breakpointObserver: BreakpointObserver) { 
     this.breakpointObserver
     .observe(['(max-width: 767px)'])  // 👈 Custom media query
